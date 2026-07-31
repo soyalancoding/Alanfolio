@@ -1,0 +1,29 @@
+---
+import ExperienceItem from '../molecules/ExperienceItem.astro';
+import Typography from '../atoms/Typography.astro';
+import portfolioData from '../../data/portfolio.json';
+---
+
+<section class="py-16 md:py-32 px-6" id="experience">
+  <div class="max-w-4xl mx-auto">
+    <Typography variant="h2" className="mb-16 flex items-center gap-4 text-3xl md:text-4xl">
+      <span class="w-12 h-[1px] bg-brand-primary"></span>
+      Experiencia profesional
+    </Typography>
+    
+    <div class="relative pl-8 md:pl-0">
+      <!-- Vertical Timeline Line -->
+      <div class="absolute left-[3px] md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-[2px] timeline-line"></div>
+      
+      {portfolioData.experience.map((exp, index) => (
+        <ExperienceItem
+          role={exp.role}
+          company={exp.company}
+          period={exp.period}
+          description={exp.description}
+          isLeft={index % 2 !== 0}
+        />
+      ))}
+    </div>
+  </div>
+</section>

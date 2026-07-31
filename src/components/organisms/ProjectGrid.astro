@@ -1,0 +1,41 @@
+---
+import ProjectCard from '../molecules/ProjectCard.astro';
+import Typography from '../atoms/Typography.astro';
+import portfolioData from '../../data/portfolio.json';
+
+interface Props {
+  limit?: number;
+}
+
+const { limit } = Astro.props;
+const projects = limit ? portfolioData.projects.slice(0, limit) : portfolioData.projects;
+---
+
+<section class="py-16 md:py-32 bg-brand-surfaceContainerLowest/50 px-6" id="projects">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+      <div>
+        <Typography variant="h2" className="mb-4 text-3xl md:text-4xl">Featured Works</Typography>
+        <Typography variant="body" className="text-brand-textMuted max-w-xl text-lg">
+          A selection of engineering challenges and creative experiments I've tackled recently.
+        </Typography>
+      </div>
+      <a class="text-brand-primary flex items-center gap-2 hover:underline font-medium" href="/projects">
+        View All Projects
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map((project) => (
+        <ProjectCard
+          title={project.title}
+          shortDescription={project.shortDescription}
+          imageUrl={project.imageUrl}
+          slug={project.slug}
+          techStack={project.techStack}
+        />
+      ))}
+    </div>
+  </div>
+</section>

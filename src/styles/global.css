@@ -1,1 +1,48 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-brand-background: #111317;
+  --color-brand-surface: #1e2024;
+  --color-brand-surface-highlight: #333539;
+  --color-brand-primary: #00e5ff;
+  --color-brand-primary-cyan: #c3f5ff;
+  --color-brand-secondary: #81dc68;
+  --color-brand-text: #e2e2e8;
+  --color-brand-text-muted: #bac9cc;
+  --color-brand-border: #3b494c;
+
+  --font-geist: "Geist", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer utilities {
+  .glass-card {
+      background: rgba(30, 32, 36, 0.4);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(132, 147, 150, 0.1);
+  }
+  .ghost-border {
+      border: 1px solid rgba(0, 218, 243, 0.2);
+  }
+  .cyan-orange-gradient {
+      background: linear-gradient(135deg, #00daf3 0%, #ffb951 100%);
+  }
+  .text-gradient {
+      background: linear-gradient(135deg, #00daf3 0%, #ffb951 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+  }
+  .hero-motion {
+      animation: float 6s ease-in-out infinite;
+  }
+  @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+  }
+  .timeline-line {
+      background: linear-gradient(to bottom, #00daf3, transparent);
+  }
+}

@@ -1,0 +1,38 @@
+---
+import Typography from '../atoms/Typography.astro';
+
+interface Props {
+  title: string;
+  shortDescription: string;
+  imageUrl: string;
+  slug: string;
+  techStack: string[];
+}
+
+const { title, shortDescription, imageUrl, slug, techStack } = Astro.props;
+---
+
+<div class="group glass-card rounded-xl overflow-hidden ghost-border hover:translate-y-[-8px] transition-all duration-300">
+  <div class="relative h-64 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-t from-brand-surface to-transparent z-10 opacity-60"></div>
+    <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt={title} src={imageUrl || '/placeholder.png'}>
+    <div class="absolute bottom-4 left-4 z-20 flex flex-wrap gap-2">
+      {techStack.slice(0, 2).map((tech) => (
+        <span class="px-3 py-1 rounded-full bg-brand-surface/80 backdrop-blur-md text-brand-primary font-mono text-xs">{tech}</span>
+      ))}
+    </div>
+  </div>
+  <div class="p-8">
+    <Typography variant="h3" className="text-2xl mb-3 group-hover:text-brand-primary transition-colors">{title}</Typography>
+    <Typography variant="body" className="text-brand-textMuted mb-6 line-clamp-2">{shortDescription}</Typography>
+    <div class="flex items-center justify-between">
+      <a class="font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2 text-brand-text hover:text-brand-primary" href={`/projects/${slug}`}>
+        View Case Study 
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+      </a>
+      <div class="text-brand-textMuted opacity-0 group-hover:opacity-100 transition-opacity">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </div>
+    </div>
+  </div>
+</div>
