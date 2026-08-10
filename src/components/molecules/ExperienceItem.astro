@@ -1,5 +1,6 @@
 ---
-import Typography from '../atoms/Typography.astro';
+// Components
+import Typography from "@/components/atoms/Typography.astro";
 
 interface Props {
   role: string;
@@ -12,28 +13,60 @@ interface Props {
 const { role, company, period, description, isLeft = false } = Astro.props;
 ---
 
-<div class="relative mb-20 md:flex md:justify-between items-center w-full group">
-  {isLeft ? (
-    <>
-      <div class="md:w-[45%] glass-card p-8 rounded-xl ghost-border hover:border-brand-primary/40 transition-colors group-hover:border-brand-primary/40 md:text-right">
-        <span class="font-mono text-sm text-brand-primary mb-2 block uppercase">{period}</span>
-        <Typography variant="h3" className="text-xl mb-1 group-hover:text-brand-primary transition-colors">{role}</Typography>
-        <Typography variant="label" className="text-brand-textMuted text-sm mb-4 inline-block">{company}</Typography>
-        <Typography variant="body" className="text-brand-textMuted">{description}</Typography>
-      </div>
-      <div class="absolute left-[-29px] md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-brand-surfaceHighlight z-10 border-4 border-brand-background group-hover:bg-brand-primary group-hover:shadow-[0_0_10px_#00daf3] transition-colors"></div>
-      <div class="hidden md:block md:w-[45%]"></div>
-    </>
-  ) : (
-    <>
-      <div class="hidden md:block md:w-[45%]"></div>
-      <div class="absolute left-[-29px] md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-brand-surfaceHighlight z-10 border-4 border-brand-background group-hover:bg-brand-primary group-hover:shadow-[0_0_10px_#00daf3] transition-colors"></div>
-      <div class="md:w-[45%] glass-card p-8 rounded-xl ghost-border hover:border-brand-primary/40 transition-colors group-hover:border-brand-primary/40">
-        <span class="font-mono text-sm text-brand-primary mb-2 block uppercase">{period}</span>
-        <Typography variant="h3" className="text-xl mb-1 group-hover:text-brand-primary transition-colors">{role}</Typography>
-        <Typography variant="label" className="text-brand-textMuted text-sm mb-4 inline-block">{company}</Typography>
-        <Typography variant="body" className="text-brand-textMuted">{description}</Typography>
-      </div>
-    </>
-  )}
+<div
+  class="relative mb-20 md:flex md:justify-between items-center w-full group"
+>
+  {
+    isLeft ? (
+      <>
+        <div class="md:w-[45%] glass-card p-8 rounded-xl ghost-border hover:border-brand-primary/40 transition-colors group-hover:border-brand-primary/40 md:text-right">
+          <span class="font-mono text-sm text-brand-primary mb-2 block uppercase">
+            {period}
+          </span>
+          <Typography
+            variant="h3"
+            className="mb-1 group-hover:text-brand-primary transition-colors"
+          >
+            {role}
+          </Typography>
+          <Typography
+            variant="label"
+            className="text-brand-textMuted mb-4 inline-block"
+          >
+            {company}
+          </Typography>
+          <Typography variant="body" className="">
+            {description}
+          </Typography>
+        </div>
+        <div class="absolute -left-7.25 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-brand-surfaceHighlight z-10 border-4 border-brand-background group-hover:bg-brand-primary group-hover:shadow-[0_0_10px_#00daf3] transition-colors" />
+        <div class="hidden md:block md:w-[45%]" />
+      </>
+    ) : (
+      <>
+        <div class="hidden md:block md:w-[45%]" />
+        <div class="absolute -left-7.25 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-brand-surfaceHighlight z-10 border-4 border-brand-background group-hover:bg-brand-primary group-hover:shadow-[0_0_10px_#00daf3] transition-colors" />
+        <div class="md:w-[45%] glass-card p-8 rounded-xl ghost-border hover:border-brand-primary/40 transition-colors group-hover:border-brand-primary/40">
+          <span class="font-mono text-sm text-brand-primary mb-2 block uppercase">
+            {period}
+          </span>
+          <Typography
+            variant="h3"
+            className="mb-1 group-hover:text-brand-primary transition-colors"
+          >
+            {role}
+          </Typography>
+          <Typography
+            variant="label"
+            className="text-brand-textMuted mb-4 inline-block"
+          >
+            {company}
+          </Typography>
+          <Typography variant="body" className="">
+            {description}
+          </Typography>
+        </div>
+      </>
+    )
+  }
 </div>

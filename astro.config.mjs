@@ -9,6 +9,9 @@ const __dirname = path.dirname(__filename);
 
 // https://astro.build/config
 export default defineConfig({
+  image: {
+    domains: ["placehold.co"],
+  },
   vite: {
     plugins: [tailwindcss()],
     resolve: {

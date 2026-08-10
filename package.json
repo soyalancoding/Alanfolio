@@ -10,8 +10,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write src/",
-    "doctor": "pnpm dlx react-doctor@latest --verbose"
+    "format": "prettier --write .",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
@@ -22,7 +22,12 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.20",
     "@types/node": "^26.1.2",
-    "prettier": "^3.9.6"
+    "eslint": "^10.8.0",
+    "eslint-plugin-astro": "^3.1.0",
+    "prettier": "^3.9.6",
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.65.0"
   },
   "resolutions": {
     "svgo": "^4.0.2"

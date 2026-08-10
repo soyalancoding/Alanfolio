@@ -1,22 +1,51 @@
 ---
+// Interfaces
 interface Props {
-  variant?: 'primary' | 'secondary' | 'ghost';
+  variant?: "primary" | "secondary" | "ghost" | "cta" | "outline";
+  size?: "sm" | "md" | "lg";
+  shape?: "rounded" | "pill" | "lg";
   href?: string;
   className?: string;
-  type?: 'button' | 'submit' | 'reset';
+  type?: "button" | "submit" | "reset";
 }
 
-const { variant = 'primary', href, className = '', type = 'button' } = Astro.props;
+const {
+  variant = "primary",
+  size = "md",
+  shape = "rounded",
+  href,
+  className = "",
+  type = "button",
+} = Astro.props;
 
-const baseStyles = "inline-flex items-center justify-center px-6 py-3 rounded text-sm font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2 focus:ring-offset-brand-background";
+const baseStyles =
+  "inline-flex items-center justify-center font-bold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2 focus:ring-offset-brand-background active:scale-95 text-center";
 
-const variants = {
-  primary: "bg-gradient-to-r from-brand-primary to-[#c3f5ff] text-brand-background hover:brightness-110 shadow-[0_0_15px_rgba(0,229,255,0.3)]",
-  secondary: "bg-brand-secondary text-brand-background hover:brightness-110",
-  ghost: "bg-transparent border border-brand-primary text-brand-primary hover:bg-brand-primary/10",
+const sizes = {
+  sm: "px-6 py-2 text-sm",
+  md: "px-6 py-3 text-sm",
+  lg: "px-8 py-4 text-lg",
 };
 
-const classes = `${baseStyles} ${variants[variant]} ${className}`.trim();
+const shapes = {
+  rounded: "rounded",
+  pill: "rounded-full",
+  lg: "rounded-lg",
+};
+
+const variants = {
+  primary:
+    "bg-gradient-to-r from-brand-primary to-[#c3f5ff] text-brand-background hover:brightness-110 shadow-[0_0_15px_rgba(0,229,255,0.3)]",
+  secondary: "bg-brand-secondary text-brand-background hover:brightness-110",
+  ghost:
+    "bg-transparent border border-brand-primary text-brand-primary hover:bg-brand-primary/10",
+  cta: "cyan-orange-gradient text-brand-surface hover:shadow-[0_0_20px_rgba(0,218,243,0.4)]",
+  outline:
+    "bg-transparent border border-brand-primary/40 text-brand-primary hover:bg-brand-primary/10",
+};
+
+const classes =
+  `${baseStyles} ${sizes[size]} ${shapes[shape]} ${variants[variant]} ${className}`.trim();
 ---
 
 {

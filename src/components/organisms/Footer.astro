@@ -1,30 +1,56 @@
 ---
-import Typography from '../atoms/Typography.astro';
-import portfolioData from '../../data/portfolio.json';
-import { Image } from 'astro:assets';
-import logoImage from '../../assets/images/logotipo.webp';
+// External Libraries
+import { Image } from "astro:assets";
+// Components
+import Typography from "@/components/atoms/Typography.astro";
+// Data
+import portfolioData from "@/data/portfolio.json";
+// Assets
+import logoImage from "@/assets/images/logotipo.webp";
 
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="w-full bg-brand-surfaceContainerLowest border-t border-brand-border/10">
-  <div class="flex flex-col md:flex-row justify-between items-center py-12 px-6 max-w-6xl mx-auto">
+<footer
+  class="w-full bg-brand-surfaceContainerLowest border-t border-brand-border/10"
+>
+  <div
+    class="flex flex-col md:flex-row justify-between items-center py-12 px-6 max-w-6xl mx-auto"
+  >
     <div class="mb-8 md:mb-0">
       <div class="mb-4 flex items-center">
-        <Image src={logoImage} alt="AlanCoding Logo" class="h-10 w-auto object-contain" />
+        <Image
+          src={logoImage}
+          alt="AlanCoding Logo"
+          class="h-10 w-auto object-contain"
+        />
       </div>
-      <Typography variant="label" className="text-brand-textMuted normal-case tracking-normal">
-        &copy; {currentYear}, {portfolioData.profile.name}. Trabajemos juntos. Contáctame.
+      <Typography
+        variant="label"
+        className="text-brand-textMuted normal-case tracking-normal"
+      >
+        &copy; {currentYear}, {portfolioData.profile.name}. Trabajemos juntos.
+        Contáctame.
       </Typography>
     </div>
-    
+
     <div class="flex items-center gap-8 font-mono text-sm">
-      {portfolioData.social.map(link => (
-        <a href={link.url} target="_blank" rel="noopener noreferrer" class="text-brand-textMuted hover:text-brand-secondary transition-colors transition-opacity hover:opacity-80">
-          {link.name}
-        </a>
-      ))}
-      <a href="/resume.pdf" class="text-brand-textMuted hover:text-brand-secondary transition-colors transition-opacity hover:opacity-80">
+      {
+        portfolioData.social.map((link) => (
+          <a
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-brand-textMuted hover:text-brand-secondary transition-opacity hover:opacity-80"
+          >
+            {link.name}
+          </a>
+        ))
+      }
+      <a
+        href="/resume.pdf"
+        class="text-brand-textMuted hover:text-brand-secondary transition-opacity hover:opacity-80"
+      >
         Curriculum
       </a>
     </div>

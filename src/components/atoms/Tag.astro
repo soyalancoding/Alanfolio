@@ -1,12 +1,15 @@
 ---
+// Interfaces
 interface Props {
   text: string;
   className?: string;
 }
 
-const { text, className = '' } = Astro.props;
+const { text, className = "" } = Astro.props;
 ---
 
-<span class={`inline-flex items-center font-mono text-xs font-medium text-brand-primary bg-brand-primary/10 px-2.5 py-1 rounded border border-brand-primary/20 ${className}`}>
+<span
+  class={`inline-flex items-center font-mono text-xs font-medium text-brand-primary bg-brand-primary/10 px-2.5 py-1 rounded border border-brand-primary/20 ${className}`}
+>
   {text}
 </span>

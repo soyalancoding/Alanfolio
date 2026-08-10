@@ -1,0 +1,35 @@
+---
+// External Libraries
+import { Image } from "astro:assets";
+
+// Interfaces
+interface Props {
+  src: string;
+  alt: string;
+  class?: string;
+  loading?: "lazy" | "eager";
+  width?: number;
+  height?: number;
+}
+
+const {
+  src,
+  alt,
+  class: className,
+  loading = "lazy",
+  width,
+  height,
+} = Astro.props;
+
+const isRemote = src.startsWith("http://") || src.startsWith("https://");
+---
+
+<Image
+  src={src}
+  alt={alt}
+  class={className}
+  loading={loading}
+  width={width || (isRemote ? 800 : undefined)}
+  height={height || (isRemote ? 600 : undefined)}
+  inferSize={!width && !height ? true : undefined}
+/>
