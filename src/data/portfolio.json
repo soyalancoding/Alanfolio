@@ -76,10 +76,10 @@
   ],
   "projects": [
     {
-      "slug": "aurora-finance",
-      "title": "Aurora Finance",
-      "shortDescription": "Personal finance tracker with a focus on data visualization and budgeting.",
-      "description": "Aurora Finance is a productivity application designed for personal finance tracking. It helps users visualize their financial health through dynamic charts, automated budgeting features, and cross-platform synchronization.",
+      "slug": "aurora",
+      "title": "Aurora",
+      "shortDescription": "Sistema de seguimiento financiero personal con enfoque en la visualización de datos y la elaboración de presupuestos.",
+      "description": "Aurora es una aplicación de productividad diseñada para el seguimiento de las finanzas personales. Ayuda a los usuarios a visualizar su salud financiera a través de gráficos dinámicos, funciones de presupuestación automatizadas y sincronización multiplataforma.",
       "imageUrl": "https://placehold.co/1280x720/1e2024/00e5ff?text=Aurora+Finance",
       "techStack": ["React", "TypeScript", "Tailwind CSS", "Firebase"],
       "liveUrl": "https://aurora-finance.test",

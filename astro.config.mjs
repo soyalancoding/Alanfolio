@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from "astro/config";
+import icon from "astro-icon";
 import tailwindcss from "@tailwindcss/vite";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -9,6 +10,7 @@ const __dirname = path.dirname(__filename);
 
 // https://astro.build/config
 export default defineConfig({
+  integrations: [icon()],
   image: {
     domains: ["placehold.co"],
   },

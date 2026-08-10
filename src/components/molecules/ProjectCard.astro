@@ -2,6 +2,7 @@
 // Components
 import Typography from "@/components/atoms/Typography.astro";
 import OptimizedImage from "@/components/atoms/OptimizedImage.astro";
+import Icon from "@/components/atoms/Icon.astro";
 
 // Interfaces
 interface Props {
@@ -44,51 +45,24 @@ const { title, shortDescription, imageUrl, slug, techStack } = Astro.props;
     <Typography
       variant="h3"
       className="mb-3 group-hover:text-brand-primary transition-colors"
-      >{title}</Typography
     >
-    <Typography variant="body" className="mb-6 line-clamp-2"
-      >{shortDescription}</Typography
-    >
+      {title}
+    </Typography>
+    <Typography variant="body" className="mb-6 line-clamp-2">
+      {shortDescription}
+    </Typography>
     <div class="flex items-center justify-between">
       <a
         class="font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2 text-brand-text hover:text-brand-primary"
         href={`/projects/${slug}`}
       >
-        View Case Study
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          ><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-          ></path><polyline points="15 3 21 3 21 9"></polyline><line
-            x1="10"
-            x2="21"
-            y1="14"
-            y2="3"></line></svg
-        >
+        Ver proyecto
+        <Icon name="lucide:external-link" size="sm" />
       </a>
       <div
         class="text-brand-textMuted opacity-0 group-hover:opacity-100 transition-opacity"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          ><line x1="5" x2="19" y1="12" y2="12"></line><polyline
-            points="12 5 19 12 12 19"></polyline></svg
-        >
+        <Icon name="lucide:arrow-right" size="md" />
       </div>
     </div>
   </div>

@@ -1,0 +1,21 @@
+---
+import { Icon as AstroIcon } from "astro-icon/components";
+
+interface Props {
+  name: string;
+  size?: "sm" | "base" | "md" | "lg" | "xl";
+  className?: string;
+}
+
+const { name, size = "md", className = "" } = Astro.props;
+
+const sizes = {
+  sm: "w-4 h-4", // 16px
+  base: "w-5 h-5", // 20px
+  md: "w-6 h-6", // 24px
+  lg: "w-7 h-7", // 28px
+  xl: "w-8 h-8", // 32px
+};
+---
+
+<AstroIcon name={name} class={`${sizes[size]} ${className}`} />

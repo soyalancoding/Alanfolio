@@ -2,6 +2,7 @@
 // Components
 import ProjectCard from "@/components/molecules/ProjectCard.astro";
 import Typography from "@/components/atoms/Typography.astro";
+import Icon from "@/components/atoms/Icon.astro";
 // Data
 import portfolioData from "@/data/portfolio.json";
 
@@ -25,30 +26,20 @@ const projects = limit
       class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6"
     >
       <div>
-        <Typography variant="h2" className="mb-4">Featured Works</Typography>
+        <Typography variant="h2" className="mb-4">
+          Poyectos destacados
+        </Typography>
         <Typography variant="body" className="max-w-xl">
-          A selection of engineering challenges and creative experiments I've
-          tackled recently.
+          Una selección de desafíos de ingeniería y experimentos creativos que
+          he abordado recientemente.
         </Typography>
       </div>
       <a
         class="text-brand-primary flex items-center gap-2 hover:underline font-medium"
         href="/projects"
       >
-        View All Projects
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          ><line x1="5" x2="19" y1="12" y2="12"></line><polyline
-            points="12 5 19 12 12 19"></polyline></svg
-        >
+        Ver todos los proyectos
+        <Icon name="lucide:arrow-right" size="base" />
       </a>
     </div>
 
