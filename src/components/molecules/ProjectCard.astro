@@ -18,7 +18,7 @@ const { title, shortDescription, imageUrl, slug, techStack } = Astro.props;
 ---
 
 <div
-  class="group glass-card rounded-xl overflow-hidden ghost-border hover:-translate-y-2 transition-all duration-300"
+  class="relative group glass-card rounded-xl overflow-hidden ghost-border hover:-translate-y-2 transition-all duration-300"
 >
   <div class="relative h-64 overflow-hidden">
     <div
@@ -52,19 +52,14 @@ const { title, shortDescription, imageUrl, slug, techStack } = Astro.props;
     <Typography variant="body" className="mb-6 line-clamp-2">
       {shortDescription}
     </Typography>
-    <div class="flex items-center justify-between">
+    <div class="flex items-center">
       <Anchor
-        className="font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2 text-brand-text hover:text-brand-primary"
+        className="font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2 text-brand-text hover:text-brand-primary before:absolute before:inset-0 before:z-30 before:content-['']"
         href={`/projects/${slug}`}
       >
         Ver proyecto
         <Icon name="lucide:external-link" size="sm" />
       </Anchor>
-      <div
-        class="text-brand-textMuted opacity-0 group-hover:opacity-100 transition-opacity"
-      >
-        <Icon name="lucide:arrow-right" size="md" />
-      </div>
     </div>
   </div>
 </div>

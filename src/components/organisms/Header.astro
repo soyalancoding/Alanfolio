@@ -44,11 +44,116 @@ const navItems = [
 
     <div class="md:hidden flex items-center">
       <button
-        class="text-brand-primary hover:text-brand-primaryCyan"
+        id="mobile-menu-btn"
+        class="text-brand-primary hover:text-brand-primaryCyan transition-colors"
         aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
       >
-        <Icon name="lucide:menu" size="lg" />
+        <span id="icon-menu" class="block">
+          <Icon name="lucide:menu" size="lg" />
+        </span>
+        <span id="icon-close" class="hidden">
+          <Icon name="lucide:x" size="lg" />
+        </span>
       </button>
     </div>
   </div>
+
+  <!-- Mobile Menu Dropdown -->
+  <div
+    id="mobile-menu"
+    class="md:hidden flex bg-brand-background/95 backdrop-blur-xl border-b border-brand-border/20 shadow-2xl absolute top-20 left-0 w-full flex-col px-6 py-8 gap-6 transition-all duration-300 ease-in-out transform opacity-0 -translate-y-4 pointer-events-none invisible"
+  >
+    <nav class="flex flex-col gap-6 items-center">
+      {
+        navItems.map((item) => (
+          <Anchor
+            href={item.href}
+            className="mobile-nav-link font-inter text-lg font-medium text-brand-textMuted hover:text-brand-primary transition-colors block text-center w-full py-2"
+          >
+            {item.label}
+          </Anchor>
+        ))
+      }
+      <div class="mt-4 w-full flex justify-center">
+        <Button
+          href="#contact"
+          variant="cta"
+          size="md"
+          shape="pill"
+          className="w-full max-w-62.5 mobile-nav-link"
+        >
+          Contáctame
+        </Button>
+      </div>
+    </nav>
+  </div>
 </header>
+
+<script>
+  function setupMobileMenu() {
+    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const iconMenu = document.getElementById("icon-menu");
+    const iconClose = document.getElementById("icon-close");
+    const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
+
+    if (mobileMenuBtn && mobileMenu && iconMenu && iconClose) {
+      const toggleMenu = () => {
+        const isExpanded =
+          mobileMenuBtn.getAttribute("aria-expanded") === "true";
+
+        if (!isExpanded) {
+          mobileMenu.classList.remove(
+            "opacity-0",
+            "-translate-y-4",
+            "pointer-events-none",
+            "invisible",
+          );
+          mobileMenu.classList.add(
+            "opacity-100",
+            "translate-y-0",
+            "pointer-events-auto",
+            "visible",
+          );
+          iconMenu.classList.add("hidden");
+          iconMenu.classList.remove("block");
+          iconClose.classList.remove("hidden");
+          iconClose.classList.add("block");
+          mobileMenuBtn.setAttribute("aria-expanded", "true");
+        } else {
+          mobileMenu.classList.add(
+            "opacity-0",
+            "-translate-y-4",
+            "pointer-events-none",
+            "invisible",
+          );
+          mobileMenu.classList.remove(
+            "opacity-100",
+            "translate-y-0",
+            "pointer-events-auto",
+            "visible",
+          );
+          iconMenu.classList.remove("hidden");
+          iconMenu.classList.add("block");
+          iconClose.classList.add("hidden");
+          iconClose.classList.remove("block");
+          mobileMenuBtn.setAttribute("aria-expanded", "false");
+        }
+      };
+
+      mobileMenuBtn.addEventListener("click", toggleMenu);
+
+      mobileNavLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          if (mobileMenuBtn.getAttribute("aria-expanded") === "true") {
+            toggleMenu();
+          }
+        });
+      });
+    }
+  }
+
+  setupMobileMenu();
+</script>
