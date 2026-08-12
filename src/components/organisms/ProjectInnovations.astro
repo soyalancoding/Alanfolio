@@ -1,0 +1,85 @@
+---
+// Components
+import Typography from "@/components/atoms/Typography.astro";
+import Icon from "@/components/atoms/Icon.astro";
+
+// Interfaces
+import type { ProjectData } from "@/interfaces/ProjectData";
+
+interface Props {
+  project: ProjectData;
+}
+
+const { project } = Astro.props;
+const innovations = project.caseStudy?.innovations || [];
+---
+
+<section class="py-24 md:py-32 max-w-6xl mx-auto px-6">
+  <Typography variant="h2" className="text-center mb-16 text-3xl md:text-4xl">
+    Innovaciones Técnicas
+  </Typography>
+
+  {
+    innovations.length === 4 ? (
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Card 1 */}
+        <div class="md:col-span-2 ghost-border rounded-2xl p-8 glass-card relative group transition-all duration-700 hover:-translate-y-1">
+          <div class="text-brand-primary mb-4">
+            <Icon name={innovations[0].icon} size="lg" />
+          </div>
+          <Typography variant="h3" className="mb-4 text-2xl">
+            {innovations[0].title}
+          </Typography>
+          <Typography variant="body" className="text-brand-textMuted">
+            {innovations[0].description}
+          </Typography>
+        </div>
+
+        {/* Card 2 */}
+        <div class="ghost-border rounded-2xl p-8 glass-card flex flex-col justify-between transition-all duration-700 hover:-translate-y-1">
+          <div>
+            <div class="text-brand-secondary mb-4">
+              <Icon name={innovations[1].icon} size="lg" />
+            </div>
+            <Typography variant="h3" className="mb-4 text-xl">
+              {innovations[1].title}
+            </Typography>
+            <Typography variant="body" className="text-brand-textMuted">
+              {innovations[1].description}
+            </Typography>
+          </div>
+        </div>
+
+        {/* Card 3 */}
+        <div class="ghost-border rounded-2xl p-8 glass-card flex flex-col justify-between transition-all duration-700 hover:-translate-y-1">
+          <div>
+            <div class="text-[#ffb951] mb-4">
+              <Icon name={innovations[2].icon} size="lg" />
+            </div>
+            <Typography variant="h3" className="mb-4 text-xl">
+              {innovations[2].title}
+            </Typography>
+            <Typography variant="body" className="text-brand-textMuted">
+              {innovations[2].description}
+            </Typography>
+          </div>
+        </div>
+
+        {/* Card 4 */}
+        <div class="md:col-span-2 ghost-border rounded-2xl p-8 glass-card flex flex-col sm:flex-row items-start sm:items-center gap-8 transition-all duration-700 hover:-translate-y-1">
+          <div class="hidden sm:block text-brand-primary">
+            <Icon name={innovations[3].icon} size="xl" />
+          </div>
+          <div>
+            <Typography variant="h3" className="mb-2 text-2xl">
+              {innovations[3].title}
+            </Typography>
+            <Typography variant="body" className="text-brand-textMuted">
+              {innovations[3].description}
+            </Typography>
+          </div>
+        </div>
+      </div>
+    ) : null
+  }
+</section>

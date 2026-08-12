@@ -1,0 +1,71 @@
+---
+// Components
+import Typography from "@/components/atoms/Typography.astro";
+
+// Interfaces
+import type {
+  ProjectData,
+  ProjectCaseStudyResult,
+} from "@/interfaces/ProjectData";
+
+interface Props {
+  project: ProjectData;
+}
+
+const { project } = Astro.props;
+const results = project.caseStudy?.results || [];
+const testimonial = project.caseStudy?.testimonial || "";
+
+// Colores de borde y texto para cada métrica, replicando el diseño Stitch
+const colors = [
+  "text-brand-primary border-brand-primary/20",
+  "text-brand-secondary border-brand-secondary/20",
+  "text-[#ffb951] border-[#ffb951]/20",
+  "text-brand-primary border-brand-primary/20",
+];
+---
+
+<section class="py-24 md:py-32 relative">
+  <div
+    class="absolute inset-0 bg-linear-to-b from-transparent via-brand-primary/5 to-transparent pointer-events-none"
+  >
+  </div>
+  <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+    <Typography variant="h2" className="mb-12 text-3xl md:text-4xl">
+      Resultados Cuantitativos
+    </Typography>
+
+    {
+      results.length > 0 && (
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {results.map((result: ProjectCaseStudyResult, index: number) => {
+            const colorClass = colors[index % colors.length];
+            const [textColor, borderColor] = colorClass.split(" ");
+            return (
+              <div class={`p-8 border-l-2 ${borderColor}`}>
+                <div
+                  class={`font-geist text-5xl font-extrabold ${textColor} mb-2`}
+                >
+                  {result.value}
+                </div>
+                <div class="font-mono text-xs text-brand-textMuted uppercase tracking-wider">
+                  {result.label}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )
+    }
+
+    {
+      testimonial && (
+        <div class="mt-16 max-w-2xl mx-auto">
+          <Typography variant="body-lg" className="text-brand-textMuted italic">
+            {testimonial}
+          </Typography>
+        </div>
+      )
+    }
+  </div>
+</section>

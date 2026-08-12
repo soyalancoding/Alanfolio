@@ -7,7 +7,40 @@
     "imageUrl": "https://placehold.co/1280x720/1e2024/00e5ff?text=Aurora+Finance",
     "techStack": ["React", "TypeScript", "Tailwind CSS", "Firebase"],
     "liveUrl": "https://aurora-finance.test",
-    "githubUrl": "https://github.com/soyalancoding/aurora-finance"
+    "githubUrl": "https://github.com/soyalancoding/aurora-finance",
+    "caseStudy": {
+      "challenge": "El seguimiento manual de las finanzas personales en hojas de cálculo y múltiples aplicaciones bancarias genera fatiga y pérdida de control. Los usuarios necesitaban una forma de centralizar sus gastos sin comprometer su privacidad ni lidiar con interfaces abrumadoras y anticuadas.",
+      "solution": "Aurora fue diseñado con una arquitectura de sincronización rápida usando Firebase. La interfaz se construyó con React y Tailwind CSS para ofrecer visualizaciones de datos instantáneas. Cada módulo se carga de forma diferida (lazy-loading) garantizando que incluso dispositivos móviles de gama baja experimenten interacciones fluidas.",
+      "innovations": [
+        {
+          "title": "Sincronización en Tiempo Real",
+          "description": "Uso de Firebase Realtime Database para mantener todos los dispositivos sincronizados sin conflictos.",
+          "icon": "lucide:refresh-cw"
+        },
+        {
+          "title": "Gráficos Dinámicos",
+          "description": "Visualizaciones financieras renderizadas de forma nativa utilizando librerías ligeras.",
+          "icon": "lucide:pie-chart"
+        },
+        {
+          "title": "Modo Oscuro Integrado",
+          "description": "Paleta de colores optimizada para legibilidad nocturna reduciendo la fatiga visual.",
+          "icon": "lucide:moon"
+        },
+        {
+          "title": "Seguridad de Datos",
+          "description": "Reglas de seguridad robustas para garantizar que los datos financieros permanezcan privados.",
+          "icon": "lucide:shield-check"
+        }
+      ],
+      "results": [
+        { "value": "3x", "label": "Más Rápido" },
+        { "value": "100%", "label": "Disponibilidad" },
+        { "value": "50ms", "label": "Latencia Promedio" },
+        { "value": "0", "label": "Pérdida de Datos" }
+      ],
+      "testimonial": "\"Aurora Finance transformó la manera en que gestiono mi presupuesto. La interfaz es intuitiva y la sincronización es simplemente perfecta.\""
+    }
   },
   {
     "slug": "kinetic-spectrum",
@@ -17,7 +50,40 @@
     "imageUrl": "https://placehold.co/1280x720/1e2024/81dc68?text=Kinetic+UI",
     "techStack": ["Astro", "Tailwind CSS", "Storybook", "NPM"],
     "liveUrl": "https://kinetic-ui.test",
-    "githubUrl": "https://github.com/soyalancoding/kinetic-ui"
+    "githubUrl": "https://github.com/soyalancoding/kinetic-ui",
+    "caseStudy": {
+      "challenge": "El mercado de librerías de componentes está saturado de soluciones rígidas que obligan a los desarrolladores a sobreescribir miles de líneas de CSS. Era necesario crear un sistema que combinara la flexibilidad de Tailwind CSS con el diseño sofisticado del Glassmorphism, manteniendo alta accesibilidad (a11y).",
+      "solution": "Se construyó Kinetic UI desde cero utilizando Astro para un rendimiento inigualable y Tailwind CSS como motor de estilos. Cada componente fue documentado exhaustivamente en Storybook y diseñado bajo los estrictos estándares WAI-ARIA, garantizando tanto estética como inclusión.",
+      "innovations": [
+        {
+          "title": "Motor de Glassmorphism",
+          "description": "Utilidades CSS personalizadas para generar desenfoques y transparencias con alto rendimiento.",
+          "icon": "lucide:box"
+        },
+        {
+          "title": "Astro-First",
+          "description": "Componentes diseñados para hidratación parcial (Islands Architecture).",
+          "icon": "lucide:rocket"
+        },
+        {
+          "title": "Accesibilidad Nativa",
+          "description": "Soporte completo para lectores de pantalla y navegación por teclado en cada componente.",
+          "icon": "lucide:accessibility"
+        },
+        {
+          "title": "Storybook Integrado",
+          "description": "Entorno aislado para pruebas visuales y documentación interactiva de variantes.",
+          "icon": "lucide:book-open"
+        }
+      ],
+      "results": [
+        { "value": "10k+", "label": "Descargas NPM" },
+        { "value": "99", "label": "Score Accesibilidad" },
+        { "value": "100%", "label": "Tipado Estricto" },
+        { "value": "24h", "label": "Soporte Activo" }
+      ],
+      "testimonial": "\"Kinetic UI nos permitió reducir a la mitad el tiempo de prototipado sin sacrificar la calidad visual de nuestros productos.\""
+    }
   },
   {
     "slug": "savings-goals",
@@ -27,6 +93,39 @@
     "imageUrl": "https://placehold.co/1280x720/1e2024/ffc77a?text=Savings+Tracker",
     "techStack": ["React Native", "Expo", "Redux"],
     "liveUrl": "#",
-    "githubUrl": "#"
+    "githubUrl": "#",
+    "caseStudy": {
+      "challenge": "Ahorrar dinero a menudo se percibe como una tarea aburrida y difícil de cuantificar. Las aplicaciones existentes carecían de elementos motivacionales y gamificación, lo que provocaba altas tasas de abandono en las metas a largo plazo.",
+      "solution": "Se desarrolló una aplicación móvil cross-platform usando React Native y Expo. La lógica de estado global se manejó con Redux para garantizar que el progreso de cada meta se reflejara instantáneamente en múltiples pantallas, integrando micro-interacciones motivacionales.",
+      "innovations": [
+        {
+          "title": "Gamificación Móvil",
+          "description": "Sistema de recompensas visuales al alcanzar hitos de ahorro personalizados.",
+          "icon": "lucide:award"
+        },
+        {
+          "title": "Redux Toolkit",
+          "description": "Manejo de estado predecible y optimizado para evitar re-renderizados innecesarios.",
+          "icon": "lucide:layers"
+        },
+        {
+          "title": "Notificaciones Push",
+          "description": "Recordatorios amigables y personalizables para mantener la constancia del ahorro.",
+          "icon": "lucide:bell"
+        },
+        {
+          "title": "Exportación de Datos",
+          "description": "Capacidad de exportar el progreso a CSV para análisis en herramientas externas.",
+          "icon": "lucide:download"
+        }
+      ],
+      "results": [
+        { "value": "60fps", "label": "Animaciones" },
+        { "value": "4.8", "label": "Rating App Store" },
+        { "value": "90%", "label": "Retención" },
+        { "value": "Cross", "label": "Platform" }
+      ],
+      "testimonial": "\"Logré comprar mi primer auto gracias a esta app. Es increíble cómo ver el progreso visualmente te motiva a no gastar de más.\""
+    }
   }
 ]

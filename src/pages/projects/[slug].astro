@@ -4,112 +4,39 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Header from "@/components/organisms/Header.astro";
 import Footer from "@/components/organisms/Footer.astro";
 
-import Typography from "@/components/atoms/Typography.astro";
-import Button from "@/components/atoms/Button.astro";
-import Tag from "@/components/atoms/Tag.astro";
-import Anchor from "@/components/atoms/Anchor.astro";
-import OptimizedImage from "@/components/atoms/OptimizedImage.astro";
+// Organisms
+import ProjectHero from "@/components/organisms/ProjectHero.astro";
+import ProjectOverview from "@/components/organisms/ProjectOverview.astro";
+import ProjectInnovations from "@/components/organisms/ProjectInnovations.astro";
+import ProjectResults from "@/components/organisms/ProjectResults.astro";
+import ProjectNextCTA from "@/components/organisms/ProjectNextCTA.astro";
 
 // Data
 import projectsData from "@/data/projects.json";
 
 export function getStaticPaths() {
-  return projectsData.map((project) => ({
-    params: { slug: project.slug },
-    props: { project },
-  }));
+  return projectsData.map((project, index) => {
+    const nextProject = projectsData[index + 1] || projectsData[0]; // Loop to first project if it's the last one
+
+    return {
+      params: { slug: project.slug },
+      props: { project, nextProject },
+    };
+  });
 }
 
-const { project } = Astro.props;
+const { project, nextProject } = Astro.props;
 ---
 
 <BaseLayout title={`${project.title} | AlanCoding`}>
   <Header />
 
-  <main class="pt-32 pb-20 min-h-screen">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="mb-8">
-        <Anchor
-          href="/projects"
-          className="text-brand-primary hover:underline flex items-center gap-2 mb-8 font-mono text-xs"
-        >
-          &larr; Back to Projects
-        </Anchor>
-        <Typography variant="h1" className="mb-4">{project.title}</Typography>
-        <Typography variant="body-lg">{project.shortDescription}</Typography>
-      </div>
-
-      <div
-        class="aspect-video w-full rounded-2xl overflow-hidden mb-12 border border-brand-border/50"
-      >
-        <OptimizedImage
-          src={project.imageUrl}
-          alt={project.title}
-          class="w-full h-full object-cover"
-        />
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-12">
-        <div class="md:col-span-2">
-          <Typography variant="h2" className="mb-6"
-            >About the Project</Typography
-          >
-          <Typography
-            variant="body"
-            className="whitespace-pre-line mb-8 text-brand-text"
-          >
-            {project.description}
-          </Typography>
-        </div>
-
-        <div class="md:col-span-1 space-y-8">
-          <div>
-            <Typography
-              variant="h3"
-              className="mb-4 text-brand-primary text-xs font-mono uppercase tracking-wider"
-              >Tech Stack</Typography
-            >
-            <div class="flex flex-wrap gap-2">
-              {project.techStack.map((tech: string) => <Tag text={tech} />)}
-            </div>
-          </div>
-
-          <div>
-            <Typography
-              variant="h3"
-              className="mb-4 text-brand-primary text-xs font-mono uppercase tracking-wider"
-              >Links</Typography
-            >
-            <div class="flex flex-col gap-4">
-              {
-                project.liveUrl !== "#" && (
-                  <Button
-                    href={project.liveUrl}
-                    variant="primary"
-                    className="w-full"
-                    target="_blank"
-                  >
-                    Live Demo
-                  </Button>
-                )
-              }
-              {
-                project.githubUrl !== "#" && (
-                  <Button
-                    href={project.githubUrl}
-                    variant="ghost"
-                    className="w-full"
-                    target="_blank"
-                  >
-                    Source Code
-                  </Button>
-                )
-              }
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <main class="min-h-screen relative overflow-hidden bg-brand-background">
+    <ProjectHero project={project} />
+    <ProjectOverview project={project} />
+    <ProjectInnovations project={project} />
+    <ProjectResults project={project} />
+    <ProjectNextCTA nextProject={nextProject} />
   </main>
 
   <Footer />

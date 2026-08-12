@@ -1,0 +1,63 @@
+---
+// Components
+import Typography from "@/components/atoms/Typography.astro";
+import Icon from "@/components/atoms/Icon.astro";
+import OptimizedImage from "@/components/atoms/OptimizedImage.astro";
+import Anchor from "@/components/atoms/Anchor.astro";
+
+// Interfaces
+import type { ProjectData } from "@/interfaces/ProjectData";
+
+interface Props {
+  nextProject: ProjectData;
+}
+
+const { nextProject } = Astro.props;
+
+if (!nextProject) {
+  return null;
+}
+---
+
+<section class="py-24 md:py-32">
+  <div class="max-w-6xl mx-auto px-6">
+    <Anchor
+      className="group block relative rounded-3xl overflow-hidden glass-card aspect-video md:aspect-21/9 border-none transition-all duration-700 hover:-translate-y-1 before:absolute before:inset-0 before:z-30 before:content-['']"
+      href={`/projects/${nextProject.slug}`}
+    >
+      <div class="absolute inset-0 z-0">
+        <OptimizedImage
+          src={nextProject.imageUrl}
+          alt={nextProject.title}
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+        />
+        <div
+          class="absolute inset-0 bg-brand-background/80 group-hover:bg-brand-background/60 transition-colors"
+        >
+        </div>
+      </div>
+      <div
+        class="relative z-10 h-full flex flex-col items-center justify-center text-center p-8"
+      >
+        <Typography
+          variant="label"
+          className="text-brand-secondary uppercase tracking-widest mb-4"
+        >
+          Siguiente Proyecto
+        </Typography>
+        <Typography
+          variant="h2"
+          className="text-3xl md:text-5xl mb-6 group-hover:tracking-wider transition-all duration-500 text-brand-text"
+        >
+          {nextProject.title}
+        </Typography>
+        <div
+          class="flex items-center gap-2 font-bold group-hover:gap-4 transition-all text-brand-text"
+        >
+          Ver Proyecto
+          <Icon name="lucide:arrow-right" size="sm" />
+        </div>
+      </div>
+    </Anchor>
+  </div>
+</section>

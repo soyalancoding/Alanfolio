@@ -1,0 +1,46 @@
+---
+// Components
+import Typography from "@/components/atoms/Typography.astro";
+import Tag from "@/components/atoms/Tag.astro";
+
+// Interfaces
+import type { ProjectData } from "@/interfaces/ProjectData";
+
+interface Props {
+  project: ProjectData;
+}
+
+const { project } = Astro.props;
+---
+
+<section class="bg-brand-surfaceHighlight/20 py-24 md:py-32">
+  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16">
+    <div class="space-y-6">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-0.5 bg-brand-primary"></div>
+        <Typography variant="h2">El Reto</Typography>
+      </div>
+      <Typography
+        variant="body"
+        className="text-brand-textMuted leading-relaxed"
+      >
+        {project.caseStudy?.challenge || "Desafío no especificado."}
+      </Typography>
+    </div>
+    <div class="space-y-6">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-0.5 bg-brand-secondary"></div>
+        <Typography variant="h2">La Solución</Typography>
+      </div>
+      <Typography
+        variant="body"
+        className="text-brand-textMuted leading-relaxed"
+      >
+        {project.caseStudy?.solution || "Solución no especificada."}
+      </Typography>
+      <div class="flex flex-wrap gap-3 pt-4">
+        {project.techStack.map((tech: string) => <Tag text={tech} />)}
+      </div>
+    </div>
+  </div>
+</section>
