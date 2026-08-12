@@ -9,11 +9,13 @@
     { "name": "TypeScript", "icon": "typescript" },
     { "name": "JavaScript", "icon": "javascript" },
     { "name": "HTML5", "icon": "html5" },
-    { "name": "CSS3", "icon": "css3" }
+    { "name": "CSS3", "icon": "css3" },
+    { "name": "SASS", "icon": "sass" }
   ],
   "backend": [
     { "name": "Bash", "icon": "bash" },
     { "name": "Node.js", "icon": "nodejs" },
+    { "name": "Java", "icon": "java" },
     { "name": "Python", "icon": "python" },
     { "name": "FastAPI", "icon": "fastapi" },
     { "name": "Flask", "icon": "flask" },
@@ -36,6 +38,9 @@
     { "name": "Jira", "icon": "jira" },
     { "name": "Figma", "icon": "figma" },
     { "name": "Docker", "icon": "docker" },
-    { "name": "Linux", "icon": "linux" }
+    { "name": "Linux", "icon": "linux" },
+    { "name": "Red Hat", "icon": "redhat" },
+    { "name": "CentOS", "icon": "centos" },
+    { "name": "Ubuntu", "icon": "ubuntu" }
   ]
 }

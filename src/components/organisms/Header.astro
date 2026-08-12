@@ -1,8 +1,8 @@
 ---
-import { Image } from "astro:assets";
 import logoImage from "../../assets/images/logotipo.webp";
 import Button from "@/components/atoms/Button.astro";
 import Icon from "@/components/atoms/Icon.astro";
+import OptimizedImage from "@/components/atoms/OptimizedImage.astro";
 
 const navItems = [
   { label: "Experiencia", href: "experience" },
@@ -15,7 +15,7 @@ const navItems = [
 >
   <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
     <a href="/" class="flex items-center group">
-      <Image
+      <OptimizedImage
         src={logoImage}
         alt="AlanCoding Logo"
         class="h-10 w-auto object-contain hover:scale-105 transition-transform"

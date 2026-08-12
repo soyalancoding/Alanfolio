@@ -1,13 +1,13 @@
 ---
-// External Libraries
-import { Image } from "astro:assets";
 // Components
 import Typography from "@/components/atoms/Typography.astro";
 import Button from "@/components/atoms/Button.astro";
+import OptimizedImage from "@/components/atoms/OptimizedImage.astro";
 // Data
 import profileData from "@/data/profile.json";
 // Assets
 import profileImage from "@/assets/images/profile.webp";
+import cvUrl from "@/assets/pdf/Alan Francisco Mora Gonzalez - Curriculum.pdf";
 ---
 
 <section class="max-w-6xl mx-auto px-6 py-24 md:py-32">
@@ -41,13 +41,7 @@ import profileImage from "@/assets/images/profile.webp";
       </div>
 
       <div class="flex flex-col sm:flex-row gap-4 pt-4">
-        <Button
-          href="/resume.pdf"
-          variant="cta"
-          size="lg"
-          shape="lg"
-          target="_blank"
-        >
+        <Button href={cvUrl} variant="cta" size="lg" shape="lg" target="_blank">
           Descargar CV
         </Button>
         <Button
@@ -68,7 +62,7 @@ import profileImage from "@/assets/images/profile.webp";
       <div
         class="aspect-square rounded-2xl overflow-hidden glass-card ghost-border rotate-2 hover:rotate-0 transition-transform duration-500 shadow-[0_0_30px_rgba(0,218,243,0.1)]"
       >
-        <Image
+        <OptimizedImage
           src={profileImage}
           alt={profileData.name}
           class="w-full h-full object-cover"
@@ -78,7 +72,7 @@ import profileImage from "@/assets/images/profile.webp";
         class="absolute -bottom-6 -left-6 glass-card p-6 rounded-xl hidden md:block ghost-border"
       >
         <Typography variant="label-muted" className="text-brand-tertiary">
-          Status: {profileData.status}
+          Estatus: {profileData.status}
         </Typography>
         <Typography variant="body" className="text-brand-text font-bold">
           {profileData.location}

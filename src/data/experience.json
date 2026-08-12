@@ -4,31 +4,49 @@
     "role": "Software Solutions Development",
     "company": "BBVA México",
     "period": "Octubre 2024 - Actualidad",
-    "description": "Desarrollo y mantenimiento de aplicaciones web con Vue.js, gestionando infraestructura en GCP para garantizar escalabilidad y rendimiento.",
-    "extendedDescription": "Desarrollo y mantenimiento de aplicaciones web con Vue.js, gestionando infraestructura en GCP para garantizar escalabilidad y rendimiento. Experto en pruebas unitarias, integración y E2E, asegurando calidad. Documentación detallada, adopción de nuevas tecnologías y uso de metodologías ágiles para optimizar proyectos."
+    "description": "Liderazgo técnico y desarrollo frontend orientado a la creación de aplicaciones web escalables y de alto rendimiento sobre arquitectura cloud.",
+    "tasks": [
+      "Facilito la entrega continua e iterativa de valor desempeñando el rol de Scrum Master.",
+      "Desarrollo y mantengo aplicaciones web escalables utilizando Vue.js como framework base.",
+      "Gestiono la infraestructura en Google Cloud Platform (GCP) asegurando estabilidad y alta disponibilidad.",
+      "Diseño y ejecuto pruebas unitarias, de integración y E2E para garantizar los estándares de calidad del software."
+    ]
   },
   {
     "id": "exp-2",
     "role": "Software Engineer DevOps",
     "company": "Babel",
     "period": "Enero 2024 - Octubre 2024",
-    "description": "Desarrollo aplicaciones con Vue.js y las despliego en GCP. Implemento prácticas DevOps para garantizar despliegues eficientes y pruebas exhaustivas para asegurar la calidad del software.",
-    "extendedDescription": "Desarrollo aplicaciones con Vue.js y las despliego en GCP. Implemento prácticas DevOps para garantizar despliegues eficientes y pruebas exhaustivas para asegurar la calidad del software. Gestiono contenedores Docker, documentación y promuevo metodologías ágiles para entregas rápidas y adaptativas."
+    "description": "Construcción y despliegue automatizado de aplicaciones web avanzadas integrando prácticas CI/CD y cultura DevOps en entornos bancarios.",
+    "tasks": [
+      "Asignado a BBVA México.",
+      "Desarrollé y mantuve interfaces y módulos web dinámicos utilizando Vue.js.",
+      "Implementé pipelines de despliegue continuo y optimicé la infraestructura del sistema dentro de Google Cloud Platform (GCP)."
+    ]
   },
   {
     "id": "exp-3",
     "role": "Python Developer",
     "company": "Cyttek Group México",
     "period": "Agosto 2023 - Diciembre 2023",
-    "description": "Desarrollo de software utilizando Django, orientado a mejorar la comunicación entre cajeros bancarios y sus agentes.",
-    "extendedDescription": "Desarrollo de software utilizando Django, orientado a mejorar la comunicación entre cajeros bancarios y sus agentes. Especializado en el desarrollo de aplicaciones, garantizando la seguridad de datos y el cumplimiento de normativas. Destacado en pruebas, soporte y gestión eficiente de recursos."
+    "description": "Desarrollo de herramientas backend especializadas para optimizar la comunicación operativa y operativa-agente en el sector bancario.",
+    "tasks": [
+      "Asignado a Banco Azteca.",
+      "Diseñé y desarrollé soluciones backend integrales utilizando Django para canalizar la comunicación entre cajeros y agentes.",
+      "Garanticé la estabilidad y el flujo correcto de datos en sistemas de alta transaccionalidad bancaria."
+    ]
   },
   {
     "id": "exp-4",
     "role": "Web Developer",
     "company": "Abricot",
     "period": "Marzo 2021 - Agosto 2023",
-    "description": "Experiencia en el uso de React JS para el frontend y FastAPI con Python para el backend.",
-    "extendedDescription": "Experiencia en el uso de React JS para el frontend y FastAPI con Python para el backend. Capacidad probada para desarrollar soluciones robustas y escalables, cumpliendo con los estándares de calidad del mercado."
+    "description": "Desarrollo full stack de aplicaciones web, integración de microservicios e infraestructura de servidores para proyectos de gran escala.",
+    "tasks": [
+      "Asignado a Telcel.",
+      "Desarrollé e implementé soluciones full stack conectando interfaces en React.js con arquitecturas de microservicios y APIs REST en FastAPI.",
+      "Optimicé el rendimiento y la velocidad de respuesta de las aplicaciones, manteniendo la compatibilidad mediante la actualización continua de librerías.",
+      "Administré servidores Linux (Red Hat y CentOS) y redacté documentación técnica para facilitar el trabajo colaborativo."
+    ]
   }
 ]

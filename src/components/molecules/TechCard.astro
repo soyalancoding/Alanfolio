@@ -1,5 +1,7 @@
 ---
+// Components
 import Typography from "@/components/atoms/Typography.astro";
+import SvgIcon from "@/components/atoms/SvgIcon.astro";
 
 interface Props {
   name: string;
@@ -7,6 +9,10 @@ interface Props {
 }
 
 const { name, icon } = Astro.props;
+
+// Lista de iconos oscuros que necesitan invertirse para verse bien en fondo oscuro
+const darkIcons = ["bash", "flask", "github", "django"];
+const isDarkIcon = darkIcons.includes(icon);
 ---
 
 <div
@@ -15,10 +21,10 @@ const { name, icon } = Astro.props;
   <div
     class="w-12 h-12 flex items-center justify-center group-hover:scale-110 transition-transform"
   >
-    <img
+    <SvgIcon
       src={`/technologies/${icon}.svg`}
       alt={`${name} icon`}
-      class="w-full h-full object-contain"
+      class={`w-full h-full object-contain transition-all duration-300 ${isDarkIcon ? "brightness-0 invert opacity-90" : ""}`}
     />
   </div>
   <Typography variant="label" className="text-brand-text font-bold text-center">

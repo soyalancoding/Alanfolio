@@ -1,13 +1,13 @@
 ---
-// External Libraries
-import { Image } from "astro:assets";
 // Components
 import Typography from "@/components/atoms/Typography.astro";
 import Button from "@/components/atoms/Button.astro";
+import OptimizedImage from "@/components/atoms/OptimizedImage.astro";
 // Data
 import profileData from "@/data/profile.json";
 // Assets
 import profileImage from "@/assets/images/profile.webp";
+import cvUrl from "@/assets/pdf/Alan Francisco Mora Gonzalez - Curriculum.pdf";
 
 const profile = profileData;
 ---
@@ -29,7 +29,7 @@ const profile = profileData;
     class="max-w-5xl mx-auto text-center z-10 flex-1 flex flex-col items-center justify-center w-full mb-12"
   >
     <div class="mb-10 hero-motion inline-block mt-12 md:mt-0">
-      <Image
+      <OptimizedImage
         src={profileImage}
         alt={profile.name}
         class="w-56 h-56 md:w-72 md:h-72 object-cover rounded-2xl border-4 border-brand-primary/40 shadow-[0_0_30px_rgba(0,218,243,0.3)] mx-auto"
@@ -59,7 +59,7 @@ const profile = profileData;
         Ver proyectos
       </Button>
       <Button
-        href="/resume.pdf"
+        href={cvUrl}
         variant="outline"
         size="lg"
         shape="pill"

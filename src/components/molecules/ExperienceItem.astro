@@ -1,13 +1,14 @@
 ---
 // Components
 import Typography from "@/components/atoms/Typography.astro";
+import Icon from "@/components/atoms/Icon.astro";
 
 interface Props {
   role: string;
   company: string;
   period: string;
   description: string;
-  extendedDescription?: string;
+  tasks?: string[];
   showFullDetails?: boolean;
   isLeft?: boolean;
 }
@@ -17,7 +18,7 @@ const {
   company,
   period,
   description,
-  extendedDescription,
+  tasks = [],
   showFullDetails = false,
   isLeft = false,
 } = Astro.props;
@@ -29,65 +30,149 @@ const {
   {
     isLeft ? (
       <>
-        <div class="md:w-[45%] glass-card p-8 rounded-xl ghost-border hover:border-brand-primary/40 transition-colors group-hover:border-brand-primary/40 md:text-right">
-          <span class="font-mono text-sm text-brand-primary mb-2 block uppercase">
-            {period}
-          </span>
-          <Typography
-            variant="h3"
-            className="mb-1 group-hover:text-brand-primary transition-colors"
-          >
-            {role}
-          </Typography>
-          <Typography
-            variant="label"
-            className="text-brand-textMuted mb-4 inline-block"
-          >
-            {company}
-          </Typography>
-          {showFullDetails && extendedDescription ? (
-            <Typography variant="body" className="">
-              {extendedDescription}
+        {showFullDetails ? (
+          <div class="md:w-[45%] glass-card p-8 rounded-xl ghost-border hover:border-brand-primary/40 transition-colors group-hover:border-brand-primary/40 text-left">
+            <span class="md:hidden font-mono text-sm text-brand-secondary font-bold mb-4 block uppercase tracking-wider">
+              {period}
+            </span>
+            <Typography
+              variant="h3"
+              className="mb-1 group-hover:text-brand-primary transition-colors"
+            >
+              {role}
             </Typography>
-          ) : (
+            <Typography
+              variant="label"
+              className="text-brand-textMuted mb-6 inline-block"
+            >
+              {company}
+            </Typography>
+
+            <ul class="space-y-4">
+              {tasks.map((task: string) => (
+                <li class="flex gap-3 items-start">
+                  <Icon
+                    name="lucide:check-circle-2"
+                    size="sm"
+                    className="text-brand-primary shrink-0 mt-1"
+                  />
+                  <Typography
+                    variant="body"
+                    className="text-sm text-brand-textMuted"
+                  >
+                    {task}
+                  </Typography>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : (
+          <div class="md:w-[45%] glass-card p-8 rounded-xl ghost-border hover:border-brand-primary/40 transition-colors group-hover:border-brand-primary/40 md:text-right">
+            <span class="font-mono text-sm text-brand-primary mb-2 block uppercase">
+              {period}
+            </span>
+            <Typography
+              variant="h3"
+              className="mb-1 group-hover:text-brand-primary transition-colors"
+            >
+              {role}
+            </Typography>
+            <Typography
+              variant="label"
+              className="text-brand-textMuted mb-4 inline-block"
+            >
+              {company}
+            </Typography>
             <Typography variant="body" className="">
               {description}
             </Typography>
-          )}
-        </div>
-        <div class="absolute -left-7.25 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-brand-surfaceHighlight z-10 border-4 border-brand-background group-hover:bg-brand-primary group-hover:shadow-[0_0_10px_#00daf3] transition-colors" />
-        <div class="hidden md:block md:w-[45%]" />
+          </div>
+        )}
+
+        <div class="absolute -left-7.25 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-brand-primary z-10 border-4 border-brand-background group-hover:shadow-[0_0_10px_#00daf3] transition-colors" />
+
+        {showFullDetails ? (
+          <div class="hidden md:flex md:w-[45%] items-center justify-start md:pl-6">
+            <span class="font-mono text-sm text-brand-secondary font-bold uppercase tracking-wider">
+              {period}
+            </span>
+          </div>
+        ) : (
+          <div class="hidden md:block md:w-[45%]" />
+        )}
       </>
     ) : (
       <>
-        <div class="hidden md:block md:w-[45%]" />
-        <div class="absolute -left-7.25 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-brand-surfaceHighlight z-10 border-4 border-brand-background group-hover:bg-brand-primary group-hover:shadow-[0_0_10px_#00daf3] transition-colors" />
-        <div class="md:w-[45%] glass-card p-8 rounded-xl ghost-border hover:border-brand-primary/40 transition-colors group-hover:border-brand-primary/40">
-          <span class="font-mono text-sm text-brand-primary mb-2 block uppercase">
-            {period}
-          </span>
-          <Typography
-            variant="h3"
-            className="mb-1 group-hover:text-brand-primary transition-colors"
-          >
-            {role}
-          </Typography>
-          <Typography
-            variant="label"
-            className="text-brand-textMuted mb-4 inline-block"
-          >
-            {company}
-          </Typography>
-          {showFullDetails && extendedDescription ? (
-            <Typography variant="body" className="">
-              {extendedDescription}
+        {showFullDetails ? (
+          <div class="hidden md:flex md:w-[45%] items-center justify-end md:pr-6">
+            <span class="font-mono text-sm text-brand-primary font-bold uppercase tracking-wider">
+              {period}
+            </span>
+          </div>
+        ) : (
+          <div class="hidden md:block md:w-[45%]" />
+        )}
+
+        <div class="absolute -left-7.25 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-brand-primary z-10 border-4 border-brand-background group-hover:shadow-[0_0_10px_#00daf3] transition-colors" />
+
+        {showFullDetails ? (
+          <div class="md:w-[45%] glass-card p-8 rounded-xl ghost-border hover:border-brand-primary/40 transition-colors group-hover:border-brand-primary/40">
+            <span class="md:hidden font-mono text-sm text-brand-primary font-bold mb-4 block uppercase tracking-wider">
+              {period}
+            </span>
+            <Typography
+              variant="h3"
+              className="mb-1 group-hover:text-brand-primary transition-colors"
+            >
+              {role}
             </Typography>
-          ) : (
+            <Typography
+              variant="label"
+              className="text-brand-textMuted mb-6 inline-block"
+            >
+              {company}
+            </Typography>
+
+            <ul class="space-y-4">
+              {tasks.map((task: string) => (
+                <li class="flex gap-3 items-start">
+                  <Icon
+                    name="lucide:check-circle-2"
+                    size="sm"
+                    className="text-brand-primary shrink-0 mt-1"
+                  />
+                  <Typography
+                    variant="body"
+                    className="text-sm text-brand-textMuted"
+                  >
+                    {task}
+                  </Typography>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : (
+          <div class="md:w-[45%] glass-card p-8 rounded-xl ghost-border hover:border-brand-primary/40 transition-colors group-hover:border-brand-primary/40">
+            <span class="font-mono text-sm text-brand-primary mb-2 block uppercase">
+              {period}
+            </span>
+            <Typography
+              variant="h3"
+              className="mb-1 group-hover:text-brand-primary transition-colors"
+            >
+              {role}
+            </Typography>
+            <Typography
+              variant="label"
+              className="text-brand-textMuted mb-4 inline-block"
+            >
+              {company}
+            </Typography>
             <Typography variant="body" className="">
               {description}
             </Typography>
-          )}
-        </div>
+          </div>
+        )}
       </>
     )
   }

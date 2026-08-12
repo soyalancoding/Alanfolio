@@ -2,8 +2,6 @@ import fs from "fs";
 import path from "path";
 
 const techs = {
-  HTML5: "html5",
-  CSS3: "css3",
   Astro: "astro",
   Angular: "angular",
   React: "react",
@@ -12,9 +10,13 @@ const techs = {
   "Tailwind CSS": "tailwindcss",
   TypeScript: "typescript",
   JavaScript: "javascript",
-  Python: "python",
+  HTML5: "html5",
+  CSS3: "css3",
+  SASS: "sass",
   Bash: "bash",
   "Node.js": "nodejs",
+  Java: "java",
+  Python: "python",
   FastAPI: "fastapi",
   Flask: "flask",
   Django: "django",
@@ -28,13 +30,16 @@ const techs = {
   "Amazon Web Services": "amazonwebservices",
   "Google Cloud Platform": "googlecloud",
   Git: "git",
-  Figma: "figma",
   GitHub: "github",
   GitLab: "gitlab",
   Bitbucket: "bitbucket",
   Jira: "jira",
+  Figma: "figma",
   Docker: "docker",
   Linux: "linux",
+  "Red Hat": "redhat",
+  Centos: "centos",
+  Ubuntu: "ubuntu",
 };
 
 const dir = path.join(process.cwd(), "public", "technologies");
