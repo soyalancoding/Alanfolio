@@ -4,7 +4,7 @@ import ProjectCard from "@/components/molecules/ProjectCard.astro";
 import Typography from "@/components/atoms/Typography.astro";
 import Icon from "@/components/atoms/Icon.astro";
 // Data
-import portfolioData from "@/data/portfolio.json";
+import projectsData from "@/data/projects.json";
 
 // Interfaces
 interface Props {
@@ -12,9 +12,7 @@ interface Props {
 }
 
 const { limit } = Astro.props;
-const projects = limit
-  ? portfolioData.projects.slice(0, limit)
-  : portfolioData.projects;
+const projects = limit ? projectsData.slice(0, limit) : projectsData;
 ---
 
 <section

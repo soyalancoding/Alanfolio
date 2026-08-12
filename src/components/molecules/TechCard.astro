@@ -1,0 +1,27 @@
+---
+import Typography from "@/components/atoms/Typography.astro";
+
+interface Props {
+  name: string;
+  icon: string;
+}
+
+const { name, icon } = Astro.props;
+---
+
+<div
+  class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-brand-primary/40 transition-all group ghost-border bg-brand-surfaceHighlight/50"
+>
+  <div
+    class="w-12 h-12 flex items-center justify-center group-hover:scale-110 transition-transform"
+  >
+    <img
+      src={`/technologies/${icon}.svg`}
+      alt={`${name} icon`}
+      class="w-full h-full object-contain"
+    />
+  </div>
+  <Typography variant="label" className="text-brand-text font-bold text-center">
+    {name}
+  </Typography>
+</div>

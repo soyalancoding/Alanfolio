@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "aurora",
+    "title": "Aurora",
+    "shortDescription": "Sistema de seguimiento financiero personal con enfoque en la visualización de datos y la elaboración de presupuestos.",
+    "description": "Aurora es una aplicación de productividad diseñada para el seguimiento de las finanzas personales. Ayuda a los usuarios a visualizar su salud financiera a través de gráficos dinámicos, funciones de presupuestación automatizadas y sincronización multiplataforma.",
+    "imageUrl": "https://placehold.co/1280x720/1e2024/00e5ff?text=Aurora+Finance",
+    "techStack": ["React", "TypeScript", "Tailwind CSS", "Firebase"],
+    "liveUrl": "https://aurora-finance.test",
+    "githubUrl": "https://github.com/soyalancoding/aurora-finance"
+  },
+  {
+    "slug": "kinetic-spectrum",
+    "title": "Kinetic UI Library",
+    "shortDescription": "A modern, accessible UI component library built on top of Tailwind CSS.",
+    "description": "An open-source UI library featuring glassmorphism elements, neon accents, and fully accessible components. Used by thousands of developers globally.",
+    "imageUrl": "https://placehold.co/1280x720/1e2024/81dc68?text=Kinetic+UI",
+    "techStack": ["Astro", "Tailwind CSS", "Storybook", "NPM"],
+    "liveUrl": "https://kinetic-ui.test",
+    "githubUrl": "https://github.com/soyalancoding/kinetic-ui"
+  },
+  {
+    "slug": "savings-goals",
+    "title": "Savings Goals Tracker",
+    "shortDescription": "Minimalist iOS app to track and achieve savings goals.",
+    "description": "A cross-platform mobile application that gamifies the savings experience, complete with progress tracking and custom milestone alerts.",
+    "imageUrl": "https://placehold.co/1280x720/1e2024/ffc77a?text=Savings+Tracker",
+    "techStack": ["React Native", "Expo", "Redux"],
+    "liveUrl": "#",
+    "githubUrl": "#"
+  }
+]

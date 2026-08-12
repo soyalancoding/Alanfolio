@@ -5,9 +5,9 @@ import Button from "@/components/atoms/Button.astro";
 import FormField from "@/components/molecules/FormField.astro";
 import Icon from "@/components/atoms/Icon.astro";
 // Data
-import portfolioData from "@/data/portfolio.json";
+import profileData from "@/data/profile.json";
 
-const { profile } = portfolioData;
+const profile = profileData;
 ---
 
 <section class="py-20 md:py-32 px-6" id="contact">
@@ -23,12 +23,12 @@ const { profile } = portfolioData;
 
       <div class="md:w-1/2">
         <Typography variant="h2" className="mb-6">
-          Let's Build Something <span class="text-gradient">Iconic</span>
+          Construyamos algo <span class="text-gradient">icónico</span>
         </Typography>
         <Typography variant="body" className="mb-12">
-          I'm currently available for freelance projects and high-impact
-          engineering roles. If you have an idea that needs technical
-          excellence, let's talk.
+          Estoy actualmente disponible para proyectos freelance y roles de
+          ingeniería de alto impacto. Si tienes una idea que necesita excelencia
+          técnica, hablemos.
         </Typography>
 
         <div class="space-y-6">
@@ -39,10 +39,10 @@ const { profile } = portfolioData;
               <Icon name="lucide:mail" size="md" />
             </div>
             <div>
-              <Typography variant="label-muted">Email</Typography>
-              <Typography variant="body" className="font-bold text-brand-text"
-                >{profile.email}</Typography
-              >
+              <Typography variant="label-muted">Empresa</Typography>
+              <Typography variant="body" className="font-bold text-brand-text">
+                {profile.work}
+              </Typography>
             </div>
           </div>
           <div class="flex items-center gap-4 group">
@@ -52,10 +52,10 @@ const { profile } = portfolioData;
               <Icon name="lucide:map-pin" size="md" />
             </div>
             <div>
-              <Typography variant="label-muted">Location</Typography>
-              <Typography variant="body" className="font-bold text-brand-text"
-                >{profile.location}</Typography
-              >
+              <Typography variant="label-muted">Ubicación</Typography>
+              <Typography variant="body" className="font-bold text-brand-text">
+                {profile.location}
+              </Typography>
             </div>
           </div>
         </div>
@@ -64,17 +64,17 @@ const { profile } = portfolioData;
       <div class="md:w-1/2 relative z-10">
         <form class="space-y-6" onsubmit="event.preventDefault()">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <FormField label="Name" placeholder="John Doe" />
+            <FormField label="Nombre" placeholder="Alan Doe" />
             <FormField
-              label="Email"
+              label="Correo"
               type="email"
-              placeholder="john@example.com"
+              placeholder="johndoe@mail.com"
             />
           </div>
           <FormField
-            label="Message"
+            label="Mensaje"
             type="textarea"
-            placeholder="Tell me about your project..."
+            placeholder="Háblame de tu proyecto..."
             rows={4}
           />
           <Button
@@ -84,7 +84,7 @@ const { profile } = portfolioData;
             shape="lg"
             className="w-full"
           >
-            Send Message
+            Enviar Mensaje
           </Button>
         </form>
       </div>

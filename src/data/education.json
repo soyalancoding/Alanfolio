@@ -1,0 +1,40 @@
+{
+  "academic": [
+    {
+      "id": "edu-1",
+      "degree": "Diplomado Desarrollo de Habilidades Directivas (Facultad de Ingeniería, UNAM)",
+      "institution": "Universidad Nacional Autónoma de México",
+      "period": "Abril, 2023 - Noviembre, 2023",
+      "description": "Este diplomado ha enriquecido mi conjunto de competencias gerenciales y de liderazgo. Durante este programa, adquirí conocimientos valiosos sobre gestión de equipos, toma de decisiones estratégicas, comunicación efectiva, resolución de conflictos y desarrollo de liderazgo. Este diplomado ha sido fundamental para mi crecimiento profesional y mi capacidad para liderar equipos y proyectos de manera efectiva en diversas organizaciones."
+    },
+    {
+      "id": "edu-2",
+      "degree": "Ingeniería en Computación",
+      "institution": "Universidad Nacional Autónoma de México",
+      "period": "Abril, 2019 - Junio, 2023",
+      "description": "Durante mi formación académica, adquirí una sólida base en conceptos clave de la informática, programación, sistemas operativos y tecnologías de vanguardia. Mi educación en la UNAM me proporcionó habilidades técnicas y analíticas de alto nivel, así como una mentalidad resolutiva y una pasión por la innovación tecnológica. Esta sólida formación académica me ha permitido destacar en mi carrera profesional en el campo de la tecnología de la información."
+    }
+  ],
+  "certifications": [
+    {
+      "id": "cert-1",
+      "name": "Desarrollo Seguro",
+      "year": "2024"
+    },
+    {
+      "id": "cert-2",
+      "name": "Scrum Developer Certified",
+      "year": "2024"
+    },
+    {
+      "id": "cert-3",
+      "name": "Scrum Fundamentals Certified",
+      "year": "2024"
+    },
+    {
+      "id": "cert-4",
+      "name": "Architecting with Google Compute Engine",
+      "year": "2022"
+    }
+  ]
+}

@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 // Components
 import Typography from "@/components/atoms/Typography.astro";
 // Data
-import portfolioData from "@/data/portfolio.json";
+import profileData from "@/data/profile.json";
 // Assets
 import logoImage from "@/assets/images/logotipo.webp";
 
@@ -29,14 +29,13 @@ const currentYear = new Date().getFullYear();
         variant="label"
         className="text-brand-textMuted normal-case tracking-normal"
       >
-        &copy; {currentYear}, {portfolioData.profile.name}. Trabajemos juntos.
-        Contáctame.
+        &copy; {currentYear}, {profileData.name}. Trabajemos juntos. Contáctame.
       </Typography>
     </div>
 
     <div class="flex items-center gap-8 font-mono text-sm">
       {
-        portfolioData.social.map((link) => (
+        profileData.social.map((link: { name: string; url: string }) => (
           <a
             href={link.url}
             target="_blank"

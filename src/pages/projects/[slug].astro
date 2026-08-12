@@ -1,15 +1,20 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import Header from "../../components/organisms/Header.astro";
-import Footer from "../../components/organisms/Footer.astro";
-import Typography from "../../components/atoms/Typography.astro";
-import Button from "../../components/atoms/Button.astro";
-import Tag from "../../components/atoms/Tag.astro";
-import OptimizedImage from "../../components/atoms/OptimizedImage.astro";
-import portfolioData from "../../data/portfolio.json";
+// Layouts
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/organisms/Header.astro";
+import Footer from "@/components/organisms/Footer.astro";
+
+// Components
+import Typography from "@/components/atoms/Typography.astro";
+import Button from "@/components/atoms/Button.astro";
+import Tag from "@/components/atoms/Tag.astro";
+import OptimizedImage from "@/components/atoms/OptimizedImage.astro";
+
+// Data
+import projectsData from "@/data/projects.json";
 
 export function getStaticPaths() {
-  return portfolioData.projects.map((project) => ({
+  return projectsData.map((project) => ({
     params: { slug: project.slug },
     props: { project },
   }));
@@ -84,6 +89,7 @@ const { project } = Astro.props;
                     href={project.liveUrl}
                     variant="primary"
                     className="w-full"
+                    target="_blank"
                   >
                     Live Demo
                   </Button>
@@ -95,6 +101,7 @@ const { project } = Astro.props;
                     href={project.githubUrl}
                     variant="ghost"
                     className="w-full"
+                    target="_blank"
                   >
                     Source Code
                   </Button>

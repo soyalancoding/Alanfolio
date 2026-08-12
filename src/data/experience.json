@@ -1,0 +1,34 @@
+[
+  {
+    "id": "exp-1",
+    "role": "Software Solutions Development",
+    "company": "BBVA México",
+    "period": "Octubre 2024 - Actualidad",
+    "description": "Desarrollo y mantenimiento de aplicaciones web con Vue.js, gestionando infraestructura en GCP para garantizar escalabilidad y rendimiento.",
+    "extendedDescription": "Desarrollo y mantenimiento de aplicaciones web con Vue.js, gestionando infraestructura en GCP para garantizar escalabilidad y rendimiento. Experto en pruebas unitarias, integración y E2E, asegurando calidad. Documentación detallada, adopción de nuevas tecnologías y uso de metodologías ágiles para optimizar proyectos."
+  },
+  {
+    "id": "exp-2",
+    "role": "Software Engineer DevOps",
+    "company": "Babel",
+    "period": "Enero 2024 - Octubre 2024",
+    "description": "Desarrollo aplicaciones con Vue.js y las despliego en GCP. Implemento prácticas DevOps para garantizar despliegues eficientes y pruebas exhaustivas para asegurar la calidad del software.",
+    "extendedDescription": "Desarrollo aplicaciones con Vue.js y las despliego en GCP. Implemento prácticas DevOps para garantizar despliegues eficientes y pruebas exhaustivas para asegurar la calidad del software. Gestiono contenedores Docker, documentación y promuevo metodologías ágiles para entregas rápidas y adaptativas."
+  },
+  {
+    "id": "exp-3",
+    "role": "Python Developer",
+    "company": "Cyttek Group México",
+    "period": "Agosto 2023 - Diciembre 2023",
+    "description": "Desarrollo de software utilizando Django, orientado a mejorar la comunicación entre cajeros bancarios y sus agentes.",
+    "extendedDescription": "Desarrollo de software utilizando Django, orientado a mejorar la comunicación entre cajeros bancarios y sus agentes. Especializado en el desarrollo de aplicaciones, garantizando la seguridad de datos y el cumplimiento de normativas. Destacado en pruebas, soporte y gestión eficiente de recursos."
+  },
+  {
+    "id": "exp-4",
+    "role": "Web Developer",
+    "company": "Abricot",
+    "period": "Marzo 2021 - Agosto 2023",
+    "description": "Experiencia en el uso de React JS para el frontend y FastAPI con Python para el backend.",
+    "extendedDescription": "Experiencia en el uso de React JS para el frontend y FastAPI con Python para el backend. Capacidad probada para desarrollar soluciones robustas y escalables, cumpliendo con los estándares de calidad del mercado."
+  }
+]

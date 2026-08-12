@@ -3,7 +3,13 @@
 import ExperienceItem from "@/components/molecules/ExperienceItem.astro";
 import Typography from "@/components/atoms/Typography.astro";
 // Data
-import portfolioData from "@/data/portfolio.json";
+import experienceData from "@/data/experience.json";
+
+interface Props {
+  showFullDetails?: boolean;
+}
+
+const { showFullDetails = false } = Astro.props;
 ---
 
 <section class="py-16 md:py-32 px-6" id="experience">
@@ -21,15 +27,28 @@ import portfolioData from "@/data/portfolio.json";
       </div>
 
       {
-        portfolioData.experience.map((exp, index) => (
-          <ExperienceItem
-            role={exp.role}
-            company={exp.company}
-            period={exp.period}
-            description={exp.description}
-            isLeft={index % 2 !== 0}
-          />
-        ))
+        experienceData.map(
+          (
+            exp: {
+              role: string;
+              company: string;
+              period: string;
+              description: string;
+              extendedDescription?: string;
+            },
+            index: number,
+          ) => (
+            <ExperienceItem
+              role={exp.role}
+              company={exp.company}
+              period={exp.period}
+              description={exp.description}
+              extendedDescription={exp.extendedDescription}
+              showFullDetails={showFullDetails}
+              isLeft={index % 2 !== 0}
+            />
+          ),
+        )
       }
     </div>
   </div>

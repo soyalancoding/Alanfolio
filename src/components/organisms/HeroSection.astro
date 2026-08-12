@@ -5,11 +5,11 @@ import { Image } from "astro:assets";
 import Typography from "@/components/atoms/Typography.astro";
 import Button from "@/components/atoms/Button.astro";
 // Data
-import portfolioData from "@/data/portfolio.json";
+import profileData from "@/data/profile.json";
 // Assets
 import profileImage from "@/assets/images/profile.webp";
 
-const { profile } = portfolioData;
+const profile = profileData;
 ---
 
 <section
@@ -43,7 +43,7 @@ const { profile } = portfolioData;
     </Typography>
 
     <Typography variant="body" className="max-w-2xl mx-auto mb-10">
-      {profile.bio}
+      {profile.bio[0]}
     </Typography>
 
     <div
@@ -64,6 +64,7 @@ const { profile } = portfolioData;
         size="lg"
         shape="pill"
         className="w-full sm:w-auto"
+        target="_blank"
       >
         Descargar CV
       </Button>

@@ -7,10 +7,20 @@ interface Props {
   company: string;
   period: string;
   description: string;
+  extendedDescription?: string;
+  showFullDetails?: boolean;
   isLeft?: boolean;
 }
 
-const { role, company, period, description, isLeft = false } = Astro.props;
+const {
+  role,
+  company,
+  period,
+  description,
+  extendedDescription,
+  showFullDetails = false,
+  isLeft = false,
+} = Astro.props;
 ---
 
 <div
@@ -35,9 +45,15 @@ const { role, company, period, description, isLeft = false } = Astro.props;
           >
             {company}
           </Typography>
-          <Typography variant="body" className="">
-            {description}
-          </Typography>
+          {showFullDetails && extendedDescription ? (
+            <Typography variant="body" className="">
+              {extendedDescription}
+            </Typography>
+          ) : (
+            <Typography variant="body" className="">
+              {description}
+            </Typography>
+          )}
         </div>
         <div class="absolute -left-7.25 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-brand-surfaceHighlight z-10 border-4 border-brand-background group-hover:bg-brand-primary group-hover:shadow-[0_0_10px_#00daf3] transition-colors" />
         <div class="hidden md:block md:w-[45%]" />
@@ -62,9 +78,15 @@ const { role, company, period, description, isLeft = false } = Astro.props;
           >
             {company}
           </Typography>
-          <Typography variant="body" className="">
-            {description}
-          </Typography>
+          {showFullDetails && extendedDescription ? (
+            <Typography variant="body" className="">
+              {extendedDescription}
+            </Typography>
+          ) : (
+            <Typography variant="body" className="">
+              {description}
+            </Typography>
+          )}
         </div>
       </>
     )

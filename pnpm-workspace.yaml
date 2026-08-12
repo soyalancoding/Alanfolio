@@ -4,4 +4,20 @@ allowBuilds:
 
 minimumReleaseAge: 10080
 
+minimumReleaseAgeExclude:
+  - "@iconify-json/lucide@1.2.123"
+  - "@types/node@26.2.0"
+  - "@typescript-eslint/eslint-plugin@8.67.0"
+  - "@typescript-eslint/parser@8.67.0"
+  - "@typescript-eslint/project-service@8.67.0"
+  - "@typescript-eslint/scope-manager@8.67.0"
+  - "@typescript-eslint/tsconfig-utils@8.67.0"
+  - "@typescript-eslint/type-utils@8.67.0"
+  - "@typescript-eslint/types@8.67.0"
+  - "@typescript-eslint/typescript-estree@8.67.0"
+  - "@typescript-eslint/utils@8.67.0"
+  - "@typescript-eslint/visitor-keys@8.67.0"
+  - astro@7.2.1
+  - typescript-eslint@8.67.0
+
 trustPolicy: no-downgrade

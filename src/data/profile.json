@@ -1,0 +1,16 @@
+{
+  "name": "Alan Francisco Mora",
+  "title": "Software Solutions Development",
+  "subtitle": "La arquitecta sofisticada",
+  "bio": [
+    "¡Hola! Soy Alan, un apasionado Software Solutions Development con sólida experiencia en desarrollo web. Mi enfoque profesional está en combinar habilidades de desarrollo y operaciones (DevOps) para impulsar la automatización y el despliegue continuo, permitiendo que las aplicaciones lleguen más rápido al usuario final y con mayor calidad.",
+    "Estoy especializado en diseñar y desarrollar soluciones eficientes y escalables, asegurándome de que los sistemas no solo funcionen, sino que crezcan junto con las necesidades del negocio. Mi conocimiento abarca desde la integración de herramientas de automatización hasta la implementación de pipelines CI/CD robustos, asegurando entregas ágiles y seguras. 💡"
+  ],
+  "work": "BBVA México",
+  "location": "Ciudad de México",
+  "status": "Disponible para contratación",
+  "social": [
+    { "name": "GitHub", "url": "https://github.com/soyalancoding" },
+    { "name": "LinkedIn", "url": "https://www.linkedin.com/in/alanmgg/" }
+  ]
+}

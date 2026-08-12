@@ -7,6 +7,8 @@ interface Props {
   href?: string;
   className?: string;
   type?: "button" | "submit" | "reset";
+  target?: string;
+  rel?: string;
 }
 
 const {
@@ -16,6 +18,8 @@ const {
   href,
   className = "",
   type = "button",
+  target,
+  rel,
 } = Astro.props;
 
 const baseStyles =
@@ -46,11 +50,13 @@ const variants = {
 
 const classes =
   `${baseStyles} ${sizes[size]} ${shapes[shape]} ${variants[variant]} ${className}`.trim();
+
+const resolvedRel = target === "_blank" && !rel ? "noopener noreferrer" : rel;
 ---
 
 {
   href ? (
-    <a href={href} class={classes}>
+    <a href={href} class={classes} target={target} rel={resolvedRel}>
       <slot />
     </a>
   ) : (

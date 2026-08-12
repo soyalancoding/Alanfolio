@@ -1,0 +1,41 @@
+{
+  "frontend": [
+    { "name": "Astro", "icon": "astro" },
+    { "name": "Angular", "icon": "angular" },
+    { "name": "React", "icon": "react" },
+    { "name": "Vue.js", "icon": "vuejs" },
+    { "name": "Next.js", "icon": "nextjs" },
+    { "name": "Tailwind CSS", "icon": "tailwindcss" },
+    { "name": "TypeScript", "icon": "typescript" },
+    { "name": "JavaScript", "icon": "javascript" },
+    { "name": "HTML5", "icon": "html5" },
+    { "name": "CSS3", "icon": "css3" }
+  ],
+  "backend": [
+    { "name": "Bash", "icon": "bash" },
+    { "name": "Node.js", "icon": "nodejs" },
+    { "name": "Python", "icon": "python" },
+    { "name": "FastAPI", "icon": "fastapi" },
+    { "name": "Flask", "icon": "flask" },
+    { "name": "Django", "icon": "django" },
+    { "name": "Firebase", "icon": "firebase" },
+    { "name": "MongoDB", "icon": "mongodb" },
+    { "name": "MySQL", "icon": "mysql" },
+    { "name": "PostgreSQL", "icon": "postgresql" }
+  ],
+  "tools": [
+    { "name": "Jenkins", "icon": "jenkins" },
+    { "name": "Ansible", "icon": "ansible" },
+    { "name": "RabbitMQ", "icon": "rabbitmq" },
+    { "name": "Amazon Web Services", "icon": "amazonwebservices" },
+    { "name": "Google Cloud Platform", "icon": "googlecloud" },
+    { "name": "Git", "icon": "git" },
+    { "name": "GitHub", "icon": "github" },
+    { "name": "GitLab", "icon": "gitlab" },
+    { "name": "Bitbucket", "icon": "bitbucket" },
+    { "name": "Jira", "icon": "jira" },
+    { "name": "Figma", "icon": "figma" },
+    { "name": "Docker", "icon": "docker" },
+    { "name": "Linux", "icon": "linux" }
+  ]
+}

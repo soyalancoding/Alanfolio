@@ -1,0 +1,84 @@
+---
+import Typography from "@/components/atoms/Typography.astro";
+import Icon from "@/components/atoms/Icon.astro";
+import educationData from "@/data/education.json";
+
+const { academic, certifications } = educationData;
+---
+
+<section
+  class="bg-brand-surfaceContainerLowest py-16 md:py-32 relative overflow-hidden"
+>
+  <!-- Background Glow -->
+  <div
+    class="absolute -top-24 -right-24 w-96 h-96 bg-brand-primary/5 blur-[120px] rounded-full"
+  >
+  </div>
+
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div>
+        <Typography variant="h2" className="mb-8">
+          Estudios <span class="text-brand-secondary">Académicos</span>
+        </Typography>
+        <div class="space-y-6">
+          {
+            academic.map(
+              (edu: {
+                degree: string;
+                institution: string;
+                period: string;
+                description?: string;
+              }) => (
+                <div class="glass-card p-6 rounded-xl border border-brand-border/20 hover:border-brand-primary/30 transition-colors">
+                  <Typography variant="h3" className="mb-1">
+                    {edu.degree}
+                  </Typography>
+                  <Typography
+                    variant="label-muted"
+                    className="mb-2 block normal-case tracking-normal"
+                  >
+                    {edu.institution} | {edu.period}
+                  </Typography>
+                  {edu.description && (
+                    <Typography variant="body" className="text-sm">
+                      {edu.description}
+                    </Typography>
+                  )}
+                </div>
+              ),
+            )
+          }
+        </div>
+      </div>
+
+      <div>
+        <Typography variant="h2" className="mb-8"> Certificados </Typography>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {
+            certifications.map((cert: { name: string; year: string }) => (
+              <div class="ghost-border border border-brand-border/30 p-6 rounded-xl flex items-center gap-4 bg-brand-surfaceHighlight/30 hover:bg-brand-surfaceHighlight/60 transition-colors">
+                <Icon
+                  name="lucide:award"
+                  size="lg"
+                  className="text-brand-primary"
+                />
+                <div>
+                  <Typography
+                    variant="label"
+                    className="font-bold text-sm block mb-1"
+                  >
+                    {cert.name}
+                  </Typography>
+                  <Typography variant="label-muted" className="text-xs">
+                    {cert.year}
+                  </Typography>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
