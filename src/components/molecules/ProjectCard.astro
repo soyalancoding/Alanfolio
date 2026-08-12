@@ -4,6 +4,7 @@ import Typography from "@/components/atoms/Typography.astro";
 import OptimizedImage from "@/components/atoms/OptimizedImage.astro";
 import Icon from "@/components/atoms/Icon.astro";
 import Anchor from "@/components/atoms/Anchor.astro";
+import type { ImageMetadata } from "astro";
 
 // Interfaces
 interface Props {
@@ -15,6 +16,22 @@ interface Props {
 }
 
 const { title, shortDescription, imageUrl, slug, techStack } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/images/projects/*.{jpeg,jpg,png,gif,webp}",
+  { eager: true },
+);
+
+const isRemote = imageUrl?.startsWith("http");
+let imageSource: string | ImageMetadata = imageUrl || "/placeholder.png";
+
+if (!isRemote && imageUrl) {
+  if (images[imageUrl]) {
+    imageSource = images[imageUrl].default;
+  } else {
+    console.warn(`Image not found in glob: ${imageUrl}`);
+  }
+}
 ---
 
 <div
@@ -28,7 +45,7 @@ const { title, shortDescription, imageUrl, slug, techStack } = Astro.props;
     <OptimizedImage
       class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
       alt={title}
-      src={imageUrl || "/placeholder.png"}
+      src={imageSource}
     />
     <div class="absolute bottom-4 left-4 z-20 flex flex-wrap gap-2">
       {

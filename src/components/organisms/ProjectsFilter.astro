@@ -1,32 +1,42 @@
 ---
+import projectsData from "@/data/projects.json";
 
+const categories = Array.from(new Set(projectsData.map((p) => p.category)));
+
+const categoryLabels: Record<string, string> = {
+  "web-app": "Web App",
+  webgl: "3D / WebGL",
+  mobile: "Mobile",
+  ai: "AI",
+  fullstack: "Fullstack",
+  web3: "Web3",
+};
+
+const formatLabel = (c: string) =>
+  categoryLabels[c] || c.charAt(0).toUpperCase() + c.slice(1).replace("-", " ");
 ---
 
 <div class="flex flex-wrap gap-4 mb-12 items-center" id="projects-filter">
   <span
     class="font-mono text-xs text-brand-outline uppercase tracking-widest mr-2"
-    >Filter by:</span
+    >Filtrar por:</span
   >
   <button
     class="filter-btn active font-mono text-sm px-6 py-2 rounded-full border border-brand-border/30 hover:border-brand-primary/50 transition-all text-brand-text"
-    data-filter="all">All</button
+    data-filter="all"
   >
-  <button
-    class="filter-btn font-mono text-sm px-6 py-2 rounded-full border border-brand-border/30 hover:border-brand-primary/50 transition-all text-brand-text"
-    data-filter="web3">Web3</button
-  >
-  <button
-    class="filter-btn font-mono text-sm px-6 py-2 rounded-full border border-brand-border/30 hover:border-brand-primary/50 transition-all text-brand-text"
-    data-filter="webgl">3D/WebGL</button
-  >
-  <button
-    class="filter-btn font-mono text-sm px-6 py-2 rounded-full border border-brand-border/30 hover:border-brand-primary/50 transition-all text-brand-text"
-    data-filter="fullstack">Fullstack</button
-  >
-  <button
-    class="filter-btn font-mono text-sm px-6 py-2 rounded-full border border-brand-border/30 hover:border-brand-primary/50 transition-all text-brand-text"
-    data-filter="ai">AI</button
-  >
+    Todos
+  </button>
+  {
+    categories.map((category) => (
+      <button
+        class="filter-btn font-mono text-sm px-6 py-2 rounded-full border border-brand-border/30 hover:border-brand-primary/50 transition-all text-brand-text"
+        data-filter={category}
+      >
+        {formatLabel(category)}
+      </button>
+    ))
+  }
 </div>
 
 <style>

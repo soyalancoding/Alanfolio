@@ -1,131 +1,167 @@
 [
   {
-    "slug": "aurora",
-    "title": "Aurora",
-    "shortDescription": "Sistema de seguimiento financiero personal con enfoque en la visualización de datos y la elaboración de presupuestos.",
-    "description": "Aurora es una aplicación de productividad diseñada para el seguimiento de las finanzas personales. Ayuda a los usuarios a visualizar su salud financiera a través de gráficos dinámicos, funciones de presupuestación automatizadas y sincronización multiplataforma.",
-    "imageUrl": "https://placehold.co/1280x720/1e2024/00e5ff?text=Aurora+Finance",
-    "techStack": ["React", "TypeScript", "Tailwind CSS", "Firebase"],
-    "liveUrl": "https://aurora-finance.test",
-    "githubUrl": "https://github.com/soyalancoding/aurora-finance",
+    "slug": "portfolio-macos-style",
+    "title": "MacOS Big Sur Portfolio",
+    "shortDescription": "Recreación meticulosa e interactiva de la interfaz de macOS Big Sur en el navegador, funcionando como un portafolio web dinámico.",
+    "description": "Réplica detallada basada en macOS Big Sur diseñada como portafolio personal. Recrea fielmente la barra de menú, la terminal, las ventanas contextuales y los iconos de aplicaciones para ofrecer una experiencia de usuario inmersiva e intuitiva.",
+    "imageUrl": "/src/assets/images/projects/macos.webp",
+    "imageAlt": "Interfaz interactiva que recrea el sistema operativo macOS Big Sur con ventanas de código y perfil abiertas.",
+    "category": "web-app",
+    "colSpan": "md:col-span-8",
+    "techStack": ["React", "Typescript", "Sass"],
+    "isFeatured": true,
+    "icon": "lucide:arrow-up-right",
+    "liveUrl": "https://alancoding-macos.vercel.app/",
+    "githubUrl": "https://github.com/soyalancoding/Portfolio-MacOS-Style",
     "caseStudy": {
-      "challenge": "El seguimiento manual de las finanzas personales en hojas de cálculo y múltiples aplicaciones bancarias genera fatiga y pérdida de control. Los usuarios necesitaban una forma de centralizar sus gastos sin comprometer su privacidad ni lidiar con interfaces abrumadoras y anticuadas.",
-      "solution": "Aurora fue diseñado con una arquitectura de sincronización rápida usando Firebase. La interfaz se construyó con React y Tailwind CSS para ofrecer visualizaciones de datos instantáneas. Cada módulo se carga de forma diferida (lazy-loading) garantizando que incluso dispositivos móviles de gama baja experimenten interacciones fluidas.",
+      "challenge": "Simular un sistema operativo completo dentro del navegador manteniendo una alta fidelidad visual y una gestión de estado fluida para múltiples ventanas activas.",
+      "solution": "Se diseñó una arquitectura basada en React para gestionar el estado de las ventanas flotantes, la profundidad Z-index y la renderización eficiente de estilos modulares con Sass.",
       "innovations": [
         {
-          "title": "Sincronización en Tiempo Real",
-          "description": "Uso de Firebase Realtime Database para mantener todos los dispositivos sincronizados sin conflictos.",
-          "icon": "lucide:refresh-cw"
-        },
-        {
-          "title": "Gráficos Dinámicos",
-          "description": "Visualizaciones financieras renderizadas de forma nativa utilizando librerías ligeras.",
-          "icon": "lucide:pie-chart"
-        },
-        {
-          "title": "Modo Oscuro Integrado",
-          "description": "Paleta de colores optimizada para legibilidad nocturna reduciendo la fatiga visual.",
-          "icon": "lucide:moon"
-        },
-        {
-          "title": "Seguridad de Datos",
-          "description": "Reglas de seguridad robustas para garantizar que los datos financieros permanezcan privados.",
-          "icon": "lucide:shield-check"
-        }
-      ],
-      "results": [
-        { "value": "3x", "label": "Más Rápido" },
-        { "value": "100%", "label": "Disponibilidad" },
-        { "value": "50ms", "label": "Latencia Promedio" },
-        { "value": "0", "label": "Pérdida de Datos" }
-      ],
-      "testimonial": "\"Aurora Finance transformó la manera en que gestiono mi presupuesto. La interfaz es intuitiva y la sincronización es simplemente perfecta.\""
-    }
-  },
-  {
-    "slug": "kinetic-spectrum",
-    "title": "Kinetic UI Library",
-    "shortDescription": "A modern, accessible UI component library built on top of Tailwind CSS.",
-    "description": "An open-source UI library featuring glassmorphism elements, neon accents, and fully accessible components. Used by thousands of developers globally.",
-    "imageUrl": "https://placehold.co/1280x720/1e2024/81dc68?text=Kinetic+UI",
-    "techStack": ["Astro", "Tailwind CSS", "Storybook", "NPM"],
-    "liveUrl": "https://kinetic-ui.test",
-    "githubUrl": "https://github.com/soyalancoding/kinetic-ui",
-    "caseStudy": {
-      "challenge": "El mercado de librerías de componentes está saturado de soluciones rígidas que obligan a los desarrolladores a sobreescribir miles de líneas de CSS. Era necesario crear un sistema que combinara la flexibilidad de Tailwind CSS con el diseño sofisticado del Glassmorphism, manteniendo alta accesibilidad (a11y).",
-      "solution": "Se construyó Kinetic UI desde cero utilizando Astro para un rendimiento inigualable y Tailwind CSS como motor de estilos. Cada componente fue documentado exhaustivamente en Storybook y diseñado bajo los estrictos estándares WAI-ARIA, garantizando tanto estética como inclusión.",
-      "innovations": [
-        {
-          "title": "Motor de Glassmorphism",
-          "description": "Utilidades CSS personalizadas para generar desenfoques y transparencias con alto rendimiento.",
-          "icon": "lucide:box"
-        },
-        {
-          "title": "Astro-First",
-          "description": "Componentes diseñados para hidratación parcial (Islands Architecture).",
-          "icon": "lucide:rocket"
-        },
-        {
-          "title": "Accesibilidad Nativa",
-          "description": "Soporte completo para lectores de pantalla y navegación por teclado en cada componente.",
-          "icon": "lucide:accessibility"
-        },
-        {
-          "title": "Storybook Integrado",
-          "description": "Entorno aislado para pruebas visuales y documentación interactiva de variantes.",
-          "icon": "lucide:book-open"
-        }
-      ],
-      "results": [
-        { "value": "10k+", "label": "Descargas NPM" },
-        { "value": "99", "label": "Score Accesibilidad" },
-        { "value": "100%", "label": "Tipado Estricto" },
-        { "value": "24h", "label": "Soporte Activo" }
-      ],
-      "testimonial": "\"Kinetic UI nos permitió reducir a la mitad el tiempo de prototipado sin sacrificar la calidad visual de nuestros productos.\""
-    }
-  },
-  {
-    "slug": "savings-goals",
-    "title": "Savings Goals Tracker",
-    "shortDescription": "Minimalist iOS app to track and achieve savings goals.",
-    "description": "A cross-platform mobile application that gamifies the savings experience, complete with progress tracking and custom milestone alerts.",
-    "imageUrl": "https://placehold.co/1280x720/1e2024/ffc77a?text=Savings+Tracker",
-    "techStack": ["React Native", "Expo", "Redux"],
-    "liveUrl": "#",
-    "githubUrl": "#",
-    "caseStudy": {
-      "challenge": "Ahorrar dinero a menudo se percibe como una tarea aburrida y difícil de cuantificar. Las aplicaciones existentes carecían de elementos motivacionales y gamificación, lo que provocaba altas tasas de abandono en las metas a largo plazo.",
-      "solution": "Se desarrolló una aplicación móvil cross-platform usando React Native y Expo. La lógica de estado global se manejó con Redux para garantizar que el progreso de cada meta se reflejara instantáneamente en múltiples pantallas, integrando micro-interacciones motivacionales.",
-      "innovations": [
-        {
-          "title": "Gamificación Móvil",
-          "description": "Sistema de recompensas visuales al alcanzar hitos de ahorro personalizados.",
-          "icon": "lucide:award"
-        },
-        {
-          "title": "Redux Toolkit",
-          "description": "Manejo de estado predecible y optimizado para evitar re-renderizados innecesarios.",
+          "title": "Manejo de Ventanas Dinámicas",
+          "description": "Sistema de arrastre, minimizado y capas Z-index para múltiples aplicaciones simultáneas.",
           "icon": "lucide:layers"
         },
         {
-          "title": "Notificaciones Push",
-          "description": "Recordatorios amigables y personalizables para mantener la constancia del ahorro.",
-          "icon": "lucide:bell"
+          "title": "Terminal Emulada",
+          "description": "Consola interactiva con comandos personalizados para explorar información del desarrollador.",
+          "icon": "lucide:terminal"
         },
         {
-          "title": "Exportación de Datos",
-          "description": "Capacidad de exportar el progreso a CSV para análisis en herramientas externas.",
-          "icon": "lucide:download"
+          "title": "Fidelidad Visual macOS",
+          "description": "Uso de efectos de translucidez (backdrop-blur) y animaciones precisas del sistema operativo.",
+          "icon": "lucide:layout"
         }
       ],
       "results": [
-        { "value": "60fps", "label": "Animaciones" },
-        { "value": "4.8", "label": "Rating App Store" },
-        { "value": "90%", "label": "Retención" },
-        { "value": "Cross", "label": "Platform" }
+        {
+          "value": "60 FPS",
+          "label": "Fluidez de Animaciones"
+        },
+        {
+          "value": "100%",
+          "label": "Fidelidad de Interfaz"
+        },
+        {
+          "value": "< 100ms",
+          "label": "Tiempo de Respuesta UI"
+        },
+        {
+          "value": "95+",
+          "label": "Puntaje Lighthouse"
+        }
       ],
-      "testimonial": "\"Logré comprar mi primer auto gracias a esta app. Es increíble cómo ver el progreso visualmente te motiva a no gastar de más.\""
+      "testimonial": "\"Una manera increíblemente creativa y original de presentar proyectos interactivos dentro del navegador.\""
+    }
+  },
+  {
+    "slug": "crossy-road-3d",
+    "title": "Crossy Road 3D Game",
+    "shortDescription": "Videojuego 3D ejecutable directamente en el navegador web con renderizado en tiempo real utilizando Three.js.",
+    "description": "Recreación interactiva del popular juego Crossy Road. Utiliza tecnologías web 3D de vanguardia para ofrecer gráficos envolventes, físicas de colisión y una experiencia inmersiva sin necesidad de plugins externos.",
+    "imageUrl": "/src/assets/images/projects/crossy-road.webp",
+    "imageAlt": "Modelos 3D estilo voxel en un juego de obstáculos renderizado en el navegador.",
+    "category": "webgl",
+    "colSpan": "md:col-span-4",
+    "techStack": ["Three.js", "JavaScript", "HTML5", "CSS3"],
+    "isFeatured": false,
+    "icon": "lucide:arrow-up-right",
+    "liveUrl": "https://alancoding-crossy-road.vercel.app/",
+    "githubUrl": "https://github.com/soyalancoding/Crossy-Road",
+    "caseStudy": {
+      "challenge": "Renderizar múltiples objetos 3D, iluminaciones y lógica de detección de colisiones en tiempo real manteniendo el rendimiento del navegador.",
+      "solution": "Implementación de modelos geométricos ligeros y optimización del bucle de renderizado de Three.js para garantizar tasas de fotogramas estables.",
+      "innovations": [
+        {
+          "title": "Renderizado Voxel 3D",
+          "description": "Construcción y renderizado eficiente de entidades tridimensionales en el navegador.",
+          "icon": "lucide:box"
+        },
+        {
+          "title": "Detección de Colisiones",
+          "description": "Lógica en tiempo real para verificar interacciones entre vehículos y el jugador.",
+          "icon": "lucide:zap"
+        },
+        {
+          "title": "Bucle de Juego Optimizado",
+          "description": "Gestión de animaciones continuas a través de requestAnimationFrame con Three.js.",
+          "icon": "lucide:gamepad-2"
+        }
+      ],
+      "results": [
+        {
+          "value": "60 FPS",
+          "label": "Rendimiento WebGL"
+        },
+        {
+          "value": "0",
+          "label": "Dependencias Externas"
+        },
+        {
+          "value": "100%",
+          "label": "Compatibilidad Cross-Browser"
+        },
+        {
+          "value": "< 2MB",
+          "label": "Peso de Carga Inicial"
+        }
+      ],
+      "testimonial": "\"Excelente demostración del potencial gráfico de Three.js aplicado al entretenimiento web.\""
+    }
+  },
+  {
+    "slug": "crypto-market-mobile",
+    "title": "Crypto Market App",
+    "shortDescription": "Aplicación móvil multiplataforma que proporciona cotizaciones e información del mercado cripto en tiempo real.",
+    "description": "Aplicación móvil construida con React Native que se conecta con la API de CoinGecko para ofrecer datos actualizados sobre precios, tendencias y capitalización de criptomonedas con una interfaz responsiva y fluida.",
+    "imageUrl": "/src/assets/images/projects/crypto-market.webp",
+    "imageAlt": "Pantallas móviles mostrando el listado y métricas de mercado de criptomonedas.",
+    "category": "mobile",
+    "colSpan": "md:col-span-12",
+    "techStack": ["React Native", "Expo", "JavaScript", "CoinGecko API"],
+    "isFeatured": false,
+    "icon": "lucide:arrow-up-right",
+    "liveUrl": "https://snack.expo.dev/@alanmgg/crypto-market",
+    "githubUrl": "https://github.com/soyalancoding/Crypto-Market",
+    "caseStudy": {
+      "challenge": "Consumir y renderizar datos volátiles de criptomonedas en tiempo real con una interfaz fluida tanto en dispositivos iOS como Android.",
+      "solution": "Integración eficiente de endpoints REST de CoinGecko e implementación de componentes nativos reutilizables con un diseño adaptable a modo oscuro y claro.",
+      "innovations": [
+        {
+          "title": "Integración API REST",
+          "description": "Conexión directa a la API de CoinGecko para la actualización continua de precios.",
+          "icon": "lucide:refresh-cw"
+        },
+        {
+          "title": "Soporte Multiplataforma",
+          "description": "Código base único para desplegar experiencias fluidas en iOS y Android mediante Expo.",
+          "icon": "lucide:smartphone"
+        },
+        {
+          "title": "UI Adaptable",
+          "description": "Diseño enfocado en la usabilidad móvil con gráficos y listas optimizadas.",
+          "icon": "lucide:palette"
+        }
+      ],
+      "results": [
+        {
+          "value": "< 1s",
+          "label": "Sincronización de Datos"
+        },
+        {
+          "value": "100%",
+          "label": "Multiplataforma (iOS/Android)"
+        },
+        {
+          "value": "99.9%",
+          "label": "Uptime de Datos Cripto"
+        },
+        {
+          "value": "100+",
+          "label": "Activos Rastreados"
+        }
+      ],
+      "testimonial": "\"Una herramienta limpia, directa y muy funcional para el seguimiento de activos digitales.\""
     }
   }
 ]

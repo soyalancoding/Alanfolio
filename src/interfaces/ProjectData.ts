@@ -23,6 +23,11 @@ export interface ProjectData {
   shortDescription: string;
   description: string;
   imageUrl: string;
+  imageAlt?: string;
+  category?: string;
+  colSpan?: string;
+  isFeatured?: boolean;
+  icon?: string;
   techStack: string[];
   liveUrl: string;
   githubUrl: string;

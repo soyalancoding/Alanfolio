@@ -4,6 +4,7 @@ import Typography from "@/components/atoms/Typography.astro";
 import Icon from "@/components/atoms/Icon.astro";
 import OptimizedImage from "@/components/atoms/OptimizedImage.astro";
 import Anchor from "@/components/atoms/Anchor.astro";
+import type { ImageMetadata } from "astro";
 
 // Interfaces
 import type { ProjectData } from "@/interfaces/ProjectData";
@@ -17,6 +18,22 @@ const { nextProject } = Astro.props;
 if (!nextProject) {
   return null;
 }
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/images/projects/*.{jpeg,jpg,png,gif,webp}",
+  { eager: true },
+);
+
+const isRemote = nextProject.imageUrl?.startsWith("http");
+let imageSource: string | ImageMetadata = nextProject.imageUrl || "";
+
+if (!isRemote && nextProject.imageUrl) {
+  if (images[nextProject.imageUrl]) {
+    imageSource = images[nextProject.imageUrl].default;
+  } else {
+    console.warn(`Image not found in glob: ${nextProject.imageUrl}`);
+  }
+}
 ---
 
 <section class="py-24 md:py-32">
@@ -26,11 +43,15 @@ if (!nextProject) {
       href={`/projects/${nextProject.slug}`}
     >
       <div class="absolute inset-0 z-0">
-        <OptimizedImage
-          src={nextProject.imageUrl}
-          alt={nextProject.title}
-          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-        />
+        {
+          imageSource && (
+            <OptimizedImage
+              src={imageSource}
+              alt={nextProject.title}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+          )
+        }
         <div
           class="absolute inset-0 bg-brand-background/80 group-hover:bg-brand-background/60 transition-colors"
         >

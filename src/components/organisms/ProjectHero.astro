@@ -4,6 +4,7 @@ import Typography from "@/components/atoms/Typography.astro";
 import Button from "@/components/atoms/Button.astro";
 import Icon from "@/components/atoms/Icon.astro";
 import OptimizedImage from "@/components/atoms/OptimizedImage.astro";
+import type { ImageMetadata } from "astro";
 
 // Interfaces
 import type { ProjectData } from "@/interfaces/ProjectData";
@@ -13,6 +14,22 @@ interface Props {
 }
 
 const { project } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/images/projects/*.{jpeg,jpg,png,gif,webp}",
+  { eager: true },
+);
+
+const isRemote = project.imageUrl?.startsWith("http");
+let imageSource: string | ImageMetadata = project.imageUrl || "";
+
+if (!isRemote && project.imageUrl) {
+  if (images[project.imageUrl]) {
+    imageSource = images[project.imageUrl].default;
+  } else {
+    console.warn(`Image not found in glob: ${project.imageUrl}`);
+  }
+}
 ---
 
 <section class="relative px-6 py-24 md:py-32 max-w-6xl mx-auto z-10">
@@ -23,7 +40,7 @@ const { project } = Astro.props;
           variant="label"
           className="text-brand-primary uppercase tracking-widest block"
         >
-          Case Study
+          Caso de estudio
         </Typography>
         <Typography variant="h1" className="mt-4 text-gradient">
           {project.title}
@@ -72,11 +89,15 @@ const { project } = Astro.props;
       <div
         class="relative rounded-2xl overflow-hidden glass-card p-2 shadow-2xl transition-all duration-700 opacity-100 translate-y-0"
       >
-        <OptimizedImage
-          src={project.imageUrl}
-          alt={project.title}
-          class="w-full aspect-video object-cover rounded-xl"
-        />
+        {
+          imageSource && (
+            <OptimizedImage
+              src={imageSource}
+              alt={project.imageAlt || project.title}
+              class="w-full aspect-video object-cover rounded-xl"
+            />
+          )
+        }
         <div
           class="absolute inset-0 bg-linear-to-t from-brand-background/40 to-transparent pointer-events-none"
         >
