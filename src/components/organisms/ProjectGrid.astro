@@ -3,6 +3,7 @@
 import ProjectCard from "@/components/molecules/ProjectCard.astro";
 import Typography from "@/components/atoms/Typography.astro";
 import Icon from "@/components/atoms/Icon.astro";
+import Anchor from "@/components/atoms/Anchor.astro";
 // Data
 import projectsData from "@/data/projects.json";
 
@@ -32,13 +33,13 @@ const projects = limit ? projectsData.slice(0, limit) : projectsData;
           he abordado recientemente.
         </Typography>
       </div>
-      <a
-        class="text-brand-primary flex items-center gap-2 hover:underline font-medium"
+      <Anchor
+        className="text-brand-primary flex items-center gap-2 hover:underline font-medium"
         href="/projects"
       >
         Ver todos los proyectos
         <Icon name="lucide:arrow-right" size="base" />
-      </a>
+      </Anchor>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

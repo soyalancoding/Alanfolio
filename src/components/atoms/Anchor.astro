@@ -1,0 +1,25 @@
+---
+// Interfaces
+interface Props {
+  href: string;
+  className?: string;
+  target?: string;
+  rel?: string;
+  ariaLabel?: string;
+}
+
+const { href, className = "", target, rel, ariaLabel } = Astro.props;
+
+// Automáticamente agregar rel="noopener noreferrer" si el target es _blank
+const resolvedRel = target === "_blank" && !rel ? "noopener noreferrer" : rel;
+---
+
+<a
+  href={href}
+  class={className}
+  target={target}
+  rel={resolvedRel}
+  aria-label={ariaLabel}
+>
+  <slot />
+</a>

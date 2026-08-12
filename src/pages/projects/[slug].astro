@@ -4,10 +4,10 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Header from "@/components/organisms/Header.astro";
 import Footer from "@/components/organisms/Footer.astro";
 
-// Components
 import Typography from "@/components/atoms/Typography.astro";
 import Button from "@/components/atoms/Button.astro";
 import Tag from "@/components/atoms/Tag.astro";
+import Anchor from "@/components/atoms/Anchor.astro";
 import OptimizedImage from "@/components/atoms/OptimizedImage.astro";
 
 // Data
@@ -29,16 +29,14 @@ const { project } = Astro.props;
   <main class="pt-32 pb-20 min-h-screen">
     <div class="max-w-4xl mx-auto px-6">
       <div class="mb-8">
-        <a
+        <Anchor
           href="/projects"
-          class="text-brand-primary hover:underline flex items-center gap-2 mb-8 font-mono text-sm"
+          className="text-brand-primary hover:underline flex items-center gap-2 mb-8 font-mono text-xs"
         >
           &larr; Back to Projects
-        </a>
+        </Anchor>
         <Typography variant="h1" className="mb-4">{project.title}</Typography>
-        <Typography variant="body" className="text-xl"
-          >{project.shortDescription}</Typography
-        >
+        <Typography variant="body-lg">{project.shortDescription}</Typography>
       </div>
 
       <div
@@ -68,7 +66,7 @@ const { project } = Astro.props;
           <div>
             <Typography
               variant="h3"
-              className="mb-4 text-brand-primary text-sm font-mono uppercase tracking-wider"
+              className="mb-4 text-brand-primary text-xs font-mono uppercase tracking-wider"
               >Tech Stack</Typography
             >
             <div class="flex flex-wrap gap-2">
@@ -79,7 +77,7 @@ const { project } = Astro.props;
           <div>
             <Typography
               variant="h3"
-              className="mb-4 text-brand-primary text-sm font-mono uppercase tracking-wider"
+              className="mb-4 text-brand-primary text-xs font-mono uppercase tracking-wider"
               >Links</Typography
             >
             <div class="flex flex-col gap-4">

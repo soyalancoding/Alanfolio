@@ -1,4 +1,6 @@
 ---
+import Anchor from "@/components/atoms/Anchor.astro";
+
 // Interfaces
 interface Props {
   variant?: "primary" | "secondary" | "ghost" | "cta" | "outline";
@@ -26,9 +28,9 @@ const baseStyles =
   "inline-flex items-center justify-center font-bold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2 focus:ring-offset-brand-background active:scale-95 text-center";
 
 const sizes = {
-  sm: "px-6 py-2 text-sm",
+  sm: "px-6 py-2 text-xs",
   md: "px-6 py-3 text-sm",
-  lg: "px-8 py-4 text-lg",
+  lg: "px-8 py-4 text-base",
 };
 
 const shapes = {
@@ -56,9 +58,9 @@ const resolvedRel = target === "_blank" && !rel ? "noopener noreferrer" : rel;
 
 {
   href ? (
-    <a href={href} class={classes} target={target} rel={resolvedRel}>
+    <Anchor href={href} className={classes} target={target} rel={resolvedRel}>
       <slot />
-    </a>
+    </Anchor>
   ) : (
     <button type={type} class={classes}>
       <slot />

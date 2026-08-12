@@ -42,9 +42,7 @@ const { academic, certifications } = educationData;
                     {edu.institution} | {edu.period}
                   </Typography>
                   {edu.description && (
-                    <Typography variant="body" className="text-sm">
-                      {edu.description}
-                    </Typography>
+                    <Typography variant="body-sm">{edu.description}</Typography>
                   )}
                 </div>
               ),
@@ -67,7 +65,7 @@ const { academic, certifications } = educationData;
                 <div>
                   <Typography
                     variant="label"
-                    className="font-bold text-sm block mb-1"
+                    className="font-bold text-xs block mb-1"
                   >
                     {cert.name}
                   </Typography>

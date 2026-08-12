@@ -2,6 +2,7 @@
 // Components
 import Typography from "@/components/atoms/Typography.astro";
 import OptimizedImage from "@/components/atoms/OptimizedImage.astro";
+import Anchor from "@/components/atoms/Anchor.astro";
 // Data
 import profileData from "@/data/profile.json";
 // Assets
@@ -33,26 +34,26 @@ const currentYear = new Date().getFullYear();
       </Typography>
     </div>
 
-    <div class="flex items-center gap-8 font-mono text-sm">
+    <div class="flex items-center gap-8 font-mono text-xs">
       {
         profileData.social.map((link: { name: string; url: string }) => (
-          <a
+          <Anchor
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            class="text-brand-textMuted hover:text-brand-secondary transition-opacity hover:opacity-80"
+            className="text-brand-textMuted hover:text-brand-secondary transition-opacity hover:opacity-80"
           >
             {link.name}
-          </a>
+          </Anchor>
         ))
       }
-      <a
+      <Anchor
         href={cvUrl}
-        class="text-brand-textMuted hover:text-brand-secondary transition-opacity hover:opacity-80"
+        className="text-brand-textMuted hover:text-brand-secondary transition-opacity hover:opacity-80"
         target="_blank"
       >
         Curriculum
-      </a>
+      </Anchor>
     </div>
   </div>
 </footer>

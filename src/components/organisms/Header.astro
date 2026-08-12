@@ -1,8 +1,12 @@
 ---
-import logoImage from "../../assets/images/logotipo.webp";
+// Images
+import logoImage from "@/assets/images/logotipo.webp";
+
+// Components
 import Button from "@/components/atoms/Button.astro";
 import Icon from "@/components/atoms/Icon.astro";
 import OptimizedImage from "@/components/atoms/OptimizedImage.astro";
+import Anchor from "@/components/atoms/Anchor.astro";
 
 const navItems = [
   { label: "Experiencia", href: "experience" },
@@ -14,23 +18,23 @@ const navItems = [
   class="fixed top-0 left-0 w-full z-50 bg-brand-background/80 backdrop-blur-lg border-b border-brand-border/20 shadow-sm"
 >
   <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-    <a href="/" class="flex items-center group">
+    <Anchor href="/" className="flex items-center group">
       <OptimizedImage
         src={logoImage}
         alt="AlanCoding Logo"
         class="h-10 w-auto object-contain hover:scale-105 transition-transform"
       />
-    </a>
+    </Anchor>
 
     <nav class="hidden md:flex items-center gap-8">
       {
         navItems.map((item) => (
-          <a
+          <Anchor
             href={item.href}
-            class="font-inter text-base font-medium text-brand-textMuted hover:text-brand-primary transition-colors"
+            className="font-inter text-sm font-medium text-brand-textMuted hover:text-brand-primary transition-colors"
           >
             {item.label}
-          </a>
+          </Anchor>
         ))
       }
       <Button href="#contact" variant="cta" size="sm" shape="pill">
