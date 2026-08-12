@@ -1,25 +1,20 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import Header from "../../components/organisms/Header.astro";
-import Footer from "../../components/organisms/Footer.astro";
-import ProjectGrid from "../../components/organisms/ProjectGrid.astro";
-import Typography from "../../components/atoms/Typography.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/organisms/Header.astro";
+import Footer from "@/components/organisms/Footer.astro";
+import ProjectsHero from "@/components/organisms/ProjectsHero.astro";
+import ProjectsFilter from "@/components/organisms/ProjectsFilter.astro";
+import ProjectsBentoGrid from "@/components/organisms/ProjectsBentoGrid.astro";
 ---
 
 <BaseLayout title="Projects | AlanCoding">
   <Header />
 
-  <main class="pt-32 pb-20 min-h-screen">
+  <main class="pt-32 pb-32 min-h-screen bg-brand-background">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="mb-16">
-        <Typography variant="h1" className="mb-4">All Projects</Typography>
-        <Typography variant="body" className="max-w-2xl">
-          A comprehensive list of my work, ranging from open-source libraries to
-          full-stack applications.
-        </Typography>
-      </div>
-
-      <ProjectGrid />
+      <ProjectsHero />
+      <ProjectsFilter />
+      <ProjectsBentoGrid />
     </div>
   </main>
 

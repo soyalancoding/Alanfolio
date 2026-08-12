@@ -1,0 +1,87 @@
+---
+import ProjectBentoCard from "@/components/molecules/ProjectBentoCard.astro";
+import bentoProjects from "@/data/bentoProjects.json";
+import type { BentoProjectData } from "@/interfaces/BentoProjectData";
+
+const projects = bentoProjects as BentoProjectData[];
+---
+
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8" id="project-grid">
+  {projects.map((project) => <ProjectBentoCard project={project} />)}
+</div>
+
+<script>
+  // Script se ejecuta de lado del cliente
+  function setupProjectsGrid() {
+    // Filtering Logic
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const projectItems = document.querySelectorAll(".project-grid-item");
+
+    filterButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        // Update active state
+        filterButtons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const filter = btn.getAttribute("data-filter");
+
+        projectItems.forEach((item) => {
+          const category = item.getAttribute("data-category");
+          if (filter === "all" || category === filter) {
+            item.classList.add("show");
+          } else {
+            item.classList.remove("show");
+          }
+        });
+      });
+    });
+
+    // Hover Parallax/Tilt effect (Subtle)
+    document.querySelectorAll(".glass-card").forEach((card) => {
+      const htmlCard = card as HTMLElement;
+      htmlCard.addEventListener("mousemove", (e) => {
+        const mouseEvent = e as MouseEvent;
+        const rect = htmlCard.getBoundingClientRect();
+        const x = mouseEvent.clientX - rect.left;
+        const y = mouseEvent.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = (y - centerY) / 20;
+        const rotateY = (centerX - x) / 20;
+
+        htmlCard.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+      });
+
+      htmlCard.addEventListener("mouseleave", () => {
+        htmlCard.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)`;
+      });
+    });
+  }
+
+  // En Astro, los scripts pueden necesitar un event listener de document load si hay ViewTransitions
+  document.addEventListener("DOMContentLoaded", setupProjectsGrid);
+  // También escuchar 'astro:page-load' si hay transiciones
+  document.addEventListener("astro:page-load", setupProjectsGrid);
+</script>
+
+<style is:global>
+  .project-grid-item {
+    display: none;
+  }
+  .project-grid-item.show {
+    display: block;
+    animation: fadeIn 0.5s ease forwards;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+</style>

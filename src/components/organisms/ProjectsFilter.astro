@@ -1,0 +1,40 @@
+---
+
+---
+
+<div class="flex flex-wrap gap-4 mb-12 items-center" id="projects-filter">
+  <span
+    class="font-mono text-xs text-brand-outline uppercase tracking-widest mr-2"
+    >Filter by:</span
+  >
+  <button
+    class="filter-btn active font-mono text-sm px-6 py-2 rounded-full border border-brand-border/30 hover:border-brand-primary/50 transition-all text-brand-text"
+    data-filter="all">All</button
+  >
+  <button
+    class="filter-btn font-mono text-sm px-6 py-2 rounded-full border border-brand-border/30 hover:border-brand-primary/50 transition-all text-brand-text"
+    data-filter="web3">Web3</button
+  >
+  <button
+    class="filter-btn font-mono text-sm px-6 py-2 rounded-full border border-brand-border/30 hover:border-brand-primary/50 transition-all text-brand-text"
+    data-filter="webgl">3D/WebGL</button
+  >
+  <button
+    class="filter-btn font-mono text-sm px-6 py-2 rounded-full border border-brand-border/30 hover:border-brand-primary/50 transition-all text-brand-text"
+    data-filter="fullstack">Fullstack</button
+  >
+  <button
+    class="filter-btn font-mono text-sm px-6 py-2 rounded-full border border-brand-border/30 hover:border-brand-primary/50 transition-all text-brand-text"
+    data-filter="ai">AI</button
+  >
+</div>
+
+<style>
+  /* Use Tailwind colors via classes inside the script for the active state, or a CSS variable approach. */
+  /* For simplicity, applying custom styles matching Tailwind theme */
+  .filter-btn.active {
+    background-color: #00daf3; /* brand-primary */
+    color: #0c0e12; /* brand-surfaceContainerLowest */
+    border-color: #00daf3;
+  }
+</style>

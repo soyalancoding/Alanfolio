@@ -1,0 +1,97 @@
+---
+// Components
+import Typography from "@/components/atoms/Typography.astro";
+import Icon from "@/components/atoms/Icon.astro";
+
+// Interfaces
+import type { BentoProjectData } from "@/interfaces/BentoProjectData";
+
+interface Props {
+  project: BentoProjectData;
+}
+
+const { project } = Astro.props;
+
+// Determinar el diseño basado en el colSpan y categoría (específico del diseño Stitch)
+const isRowLayout =
+  project.colSpan === "md:col-span-8" && project.category === "ai";
+const isFeaturedLayout =
+  project.colSpan === "md:col-span-8" && project.category === "webgl";
+const isHalfLayout = project.colSpan === "md:col-span-6";
+
+let imageContainerClass = "overflow-hidden relative ";
+if (isRowLayout) {
+  imageContainerClass += "md:w-2/5";
+} else if (isFeaturedLayout) {
+  imageContainerClass += "relative aspect-video";
+} else if (isHalfLayout) {
+  imageContainerClass += "h-64";
+} else {
+  imageContainerClass += "h-48 bg-brand-surfaceContainerHigh";
+}
+
+let cardClass = "glass-card rounded-xl overflow-hidden h-full flex flex-col";
+if (isRowLayout) {
+  cardClass += " md:flex-row";
+}
+---
+
+<article
+  class={`project-grid-item show ${project.colSpan} group`}
+  data-category={project.category}
+>
+  <a href={`/projects/${project.id}`} class="block h-full cursor-pointer">
+    <div class={cardClass}>
+      <div class={imageContainerClass}>
+        {
+          project.isFeatured && (
+            <div class="absolute inset-0 bg-linear-to-t from-brand-background to-transparent z-10 opacity-60" />
+          )
+        }
+        <img
+          src={project.imageUrl}
+          alt={project.imageAlt}
+          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        {
+          project.isFeatured && (
+            <div class="absolute top-4 left-4 z-20">
+              <span class="bg-brand-primary/20 backdrop-blur-md text-brand-primary font-mono text-xs px-3 py-1 rounded border border-brand-primary/30">
+                FEATURED
+              </span>
+            </div>
+          )
+        }
+      </div>
+
+      <div
+        class={`p-6 md:p-8 flex flex-col justify-center ${isRowLayout ? "md:w-3/5" : ""}`}
+      >
+        <div class="flex justify-between items-start mb-4">
+          <Typography variant="h3" className="text-brand-onSurface m-0">
+            {project.title}
+          </Typography>
+          {
+            project.icon && (
+              <div class="text-brand-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
+                <Icon name={project.icon} size="md" />
+              </div>
+            )
+          }
+        </div>
+        <Typography variant="body" className="text-brand-textMuted mb-6">
+          {project.description}
+        </Typography>
+        <div class="flex flex-wrap gap-2">
+          {
+            project.techStack.map((tech) => (
+              <span class="bg-brand-surfaceContainerHighest text-brand-secondary font-mono text-xs px-3 py-1 rounded-full">
+                {tech}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </a>
+</article>
