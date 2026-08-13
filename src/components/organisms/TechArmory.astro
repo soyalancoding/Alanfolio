@@ -1,6 +1,9 @@
 ---
+// Components
 import Typography from "@/components/atoms/Typography.astro";
 import TechCard from "@/components/molecules/TechCard.astro";
+
+// Data
 import skillsData from "@/data/skills.json";
 ---
 
@@ -8,7 +11,9 @@ import skillsData from "@/data/skills.json";
   <div class="flex flex-col md:flex-row items-end justify-between gap-8 mb-16">
     <div>
       <Typography variant="h2" className="mb-4">
-        Tech <span class="text-brand-primary">Stack</span>
+        Tech <Typography variant="span" className="text-brand-primary"
+          >Stack</Typography
+        >
       </Typography>
       <Typography variant="body" className="max-w-md">
         Las herramientas y lenguajes que utilizo para crear experiencias

@@ -10,7 +10,8 @@ interface Props {
     | "body-sm"
     | "label"
     | "label-muted"
-    | "code";
+    | "code"
+    | "span";
   className?: string;
 }
 
@@ -29,13 +30,14 @@ const styles = {
   "label-muted":
     "font-mono text-xs uppercase tracking-wider text-brand-textMuted",
   code: "font-mono text-xs font-medium bg-brand-surfaceHighlight px-2 py-1 rounded text-brand-primary",
+  span: "inherit",
 };
 
 const Tag = ["h1", "h2", "h3"].includes(variant)
   ? variant
   : variant === "code"
     ? "code"
-    : variant === "label" || variant === "label-muted"
+    : variant === "label" || variant === "label-muted" || variant === "span"
       ? "span"
       : "p";
 const classes = `${styles[variant]} ${className}`.trim();

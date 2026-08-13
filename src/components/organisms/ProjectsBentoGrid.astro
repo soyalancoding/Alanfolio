@@ -28,9 +28,13 @@ const projects = projectsData as ProjectData[];
         projectItems.forEach((item) => {
           const category = item.getAttribute("data-category");
           if (filter === "all" || category === filter) {
-            item.classList.add("show");
+            item.classList.remove("hidden");
+            // To retrigger animation, we force reflow
+            void (item as HTMLElement).offsetWidth;
+            item.classList.add("animate-fade-in");
           } else {
-            item.classList.remove("show");
+            item.classList.add("hidden");
+            item.classList.remove("animate-fade-in");
           }
         });
       });
@@ -65,23 +69,3 @@ const projects = projectsData as ProjectData[];
   // También escuchar 'astro:page-load' si hay transiciones
   document.addEventListener("astro:page-load", setupProjectsGrid);
 </script>
-
-<style is:global>
-  .project-grid-item {
-    display: none;
-  }
-  .project-grid-item.show {
-    display: block;
-    animation: fadeIn 0.5s ease forwards;
-  }
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-</style>

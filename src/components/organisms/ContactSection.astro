@@ -4,6 +4,7 @@ import Typography from "@/components/atoms/Typography.astro";
 import Button from "@/components/atoms/Button.astro";
 import FormField from "@/components/molecules/FormField.astro";
 import Icon from "@/components/atoms/Icon.astro";
+
 // Data
 import profileData from "@/data/profile.json";
 
@@ -23,7 +24,9 @@ const profile = profileData;
 
       <div class="md:w-1/2">
         <Typography variant="h2" className="mb-6">
-          Construyamos algo <span class="text-gradient">icónico</span>
+          Construyamos algo <Typography variant="span" className="text-gradient"
+            >icónico</Typography
+          >
         </Typography>
         <Typography variant="body" className="mb-12">
           Estoy actualmente disponible para proyectos freelance y roles de

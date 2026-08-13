@@ -5,11 +5,14 @@ interface Props {
   className?: string;
 }
 
+import Typography from "./Typography.astro";
+
 const { text, className = "" } = Astro.props;
 ---
 
-<span
-  class={`inline-flex items-center font-mono text-xs font-medium text-brand-primary bg-brand-primary/10 px-2.5 py-1 rounded border border-brand-primary/20 ${className}`}
+<Typography
+  variant="span"
+  className={`inline-flex items-center font-mono text-xs font-medium text-brand-primary bg-brand-primary/10 px-2.5 py-1 rounded border border-brand-primary/20 ${className}`}
 >
   {text}
-</span>
+</Typography>

@@ -43,9 +43,11 @@ const navItems = [
     </nav>
 
     <div class="md:hidden flex items-center">
-      <button
+      <Button
+        variant="unstyled"
+        size="none"
         id="mobile-menu-btn"
-        class="text-brand-primary hover:text-brand-primaryCyan transition-colors"
+        className="text-brand-primary hover:text-brand-primaryCyan transition-colors"
         aria-label="Menu"
         aria-expanded="false"
         aria-controls="mobile-menu"
@@ -56,7 +58,7 @@ const navItems = [
         <span id="icon-close" class="hidden">
           <Icon name="lucide:x" size="lg" />
         </span>
-      </button>
+      </Button>
     </div>
   </div>
 

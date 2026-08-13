@@ -3,6 +3,7 @@
 import Typography from "@/components/atoms/Typography.astro";
 import Icon from "@/components/atoms/Icon.astro";
 
+// Interfaces
 interface Props {
   role: string;
   company: string;
@@ -32,9 +33,12 @@ const {
       <>
         {showFullDetails ? (
           <div class="md:w-[45%] glass-card p-8 rounded-xl ghost-border hover:border-brand-primary/40 transition-colors group-hover:border-brand-primary/40 text-left">
-            <span class="md:hidden font-mono text-xs text-brand-secondary font-bold mb-4 block uppercase tracking-wider">
+            <Typography
+              variant="span"
+              className="md:hidden font-mono text-xs text-brand-secondary font-bold mb-4 block uppercase tracking-wider"
+            >
               {period}
-            </span>
+            </Typography>
             <Typography
               variant="h3"
               className="mb-1 group-hover:text-brand-primary transition-colors"
@@ -68,9 +72,12 @@ const {
           </div>
         ) : (
           <div class="md:w-[45%] glass-card p-8 rounded-xl ghost-border hover:border-brand-primary/40 transition-colors group-hover:border-brand-primary/40 md:text-right">
-            <span class="font-mono text-xs text-brand-primary mb-2 block uppercase">
+            <Typography
+              variant="span"
+              className="font-mono text-xs text-brand-primary mb-2 block uppercase tracking-wider"
+            >
               {period}
-            </span>
+            </Typography>
             <Typography
               variant="h3"
               className="mb-1 group-hover:text-brand-primary transition-colors"
@@ -93,9 +100,12 @@ const {
 
         {showFullDetails ? (
           <div class="hidden md:flex md:w-[45%] items-center justify-start md:pl-6">
-            <span class="font-mono text-xs text-brand-secondary font-bold uppercase tracking-wider">
+            <Typography
+              variant="span"
+              className="font-mono text-xs text-brand-secondary font-bold uppercase tracking-wider"
+            >
               {period}
-            </span>
+            </Typography>
           </div>
         ) : (
           <div class="hidden md:block md:w-[45%]" />
@@ -105,9 +115,12 @@ const {
       <>
         {showFullDetails ? (
           <div class="hidden md:flex md:w-[45%] items-center justify-end md:pr-6">
-            <span class="font-mono text-xs text-brand-primary font-bold uppercase tracking-wider">
+            <Typography
+              variant="span"
+              className="font-mono text-xs text-brand-primary font-bold uppercase tracking-wider"
+            >
               {period}
-            </span>
+            </Typography>
           </div>
         ) : (
           <div class="hidden md:block md:w-[45%]" />
@@ -117,9 +130,12 @@ const {
 
         {showFullDetails ? (
           <div class="md:w-[45%] glass-card p-8 rounded-xl ghost-border hover:border-brand-primary/40 transition-colors group-hover:border-brand-primary/40">
-            <span class="md:hidden font-mono text-xs text-brand-primary font-bold mb-4 block uppercase tracking-wider">
+            <Typography
+              variant="span"
+              className="md:hidden font-mono text-xs text-brand-primary font-bold mb-4 block uppercase tracking-wider"
+            >
               {period}
-            </span>
+            </Typography>
             <Typography
               variant="h3"
               className="mb-1 group-hover:text-brand-primary transition-colors"
@@ -153,9 +169,12 @@ const {
           </div>
         ) : (
           <div class="md:w-[45%] glass-card p-8 rounded-xl ghost-border hover:border-brand-primary/40 transition-colors group-hover:border-brand-primary/40">
-            <span class="font-mono text-xs text-brand-primary mb-2 block uppercase">
+            <Typography
+              variant="span"
+              className="font-mono text-xs text-brand-primary mb-2 block uppercase tracking-wider"
+            >
               {period}
-            </span>
+            </Typography>
             <Typography
               variant="h3"
               className="mb-1 group-hover:text-brand-primary transition-colors"

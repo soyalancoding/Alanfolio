@@ -3,8 +3,10 @@
 import Typography from "@/components/atoms/Typography.astro";
 import Button from "@/components/atoms/Button.astro";
 import OptimizedImage from "@/components/atoms/OptimizedImage.astro";
+
 // Data
 import profileData from "@/data/profile.json";
+
 // Assets
 import profileImage from "@/assets/images/profile.webp";
 import cvUrl from "@/assets/pdf/Alan Francisco Mora Gonzalez - Curriculum.pdf";
@@ -22,9 +24,9 @@ import cvUrl from "@/assets/pdf/Alan Francisco Mora Gonzalez - Curriculum.pdf";
 
       <Typography variant="h1" className="leading-tight">
         Creación de{" "}
-        <span class="text-gradient block md:inline">
+        <Typography variant="span" className="text-gradient block md:inline">
           Soluciones Digitales
-        </span>
+        </Typography>
       </Typography>
 
       <div class="space-y-4">

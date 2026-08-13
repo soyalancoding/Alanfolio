@@ -2,6 +2,7 @@
 // Components
 import ExperienceItem from "@/components/molecules/ExperienceItem.astro";
 import Typography from "@/components/atoms/Typography.astro";
+
 // Data
 import experienceData from "@/data/experience.json";
 
@@ -24,7 +25,10 @@ const { showFullDetails = false } = Astro.props;
       {
         showFullDetails ? (
           <>
-            Experiencia <span class="text-brand-secondary">Laboral</span>
+            Experiencia{" "}
+            <Typography variant="span" className="text-brand-secondary">
+              Laboral
+            </Typography>
           </>
         ) : (
           "Experiencia profesional"

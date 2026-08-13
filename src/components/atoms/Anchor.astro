@@ -6,20 +6,35 @@ interface Props {
   target?: string;
   rel?: string;
   ariaLabel?: string;
+  variant?: "link" | "wrapper" | "unstyled";
+  [key: string]: unknown;
 }
 
-const { href, className = "", target, rel, ariaLabel } = Astro.props;
+const {
+  href,
+  className = "",
+  target,
+  rel,
+  ariaLabel,
+  variant = "unstyled",
+  ...rest
+} = Astro.props;
 
 // Automáticamente agregar rel="noopener noreferrer" si el target es _blank
 const resolvedRel = target === "_blank" && !rel ? "noopener noreferrer" : rel;
+
+const baseStyles =
+  variant === "link" ? "text-brand-primary hover:underline" : "";
+const finalClassName = `${baseStyles} ${className}`.trim();
 ---
 
 <a
   href={href}
-  class={className}
+  class={finalClassName}
   target={target}
   rel={resolvedRel}
   aria-label={ariaLabel}
+  {...rest}
 >
   <slot />
 </a>

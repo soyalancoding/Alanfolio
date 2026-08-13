@@ -3,6 +3,7 @@
 import Typography from "@/components/atoms/Typography.astro";
 import Icon from "@/components/atoms/Icon.astro";
 import OptimizedImage from "@/components/atoms/OptimizedImage.astro";
+import Anchor from "@/components/atoms/Anchor.astro";
 import type { ImageMetadata } from "astro";
 
 // Interfaces
@@ -55,10 +56,14 @@ if (isRowLayout) {
 ---
 
 <article
-  class={`project-grid-item show ${project.colSpan} group`}
+  class={`project-grid-item animate-fade-in ${project.colSpan} group`}
   data-category={project.category}
 >
-  <a href={`/projects/${project.slug}`} class="block h-full cursor-pointer">
+  <Anchor
+    href={`/projects/${project.slug}`}
+    className="block h-full cursor-pointer"
+    variant="wrapper"
+  >
     <div class={cardClass}>
       <div class={imageContainerClass}>
         {
@@ -78,9 +83,12 @@ if (isRowLayout) {
         {
           project.isFeatured && (
             <div class="absolute top-4 left-4 z-20">
-              <span class="bg-brand-primary/20 backdrop-blur-md text-brand-primary font-mono text-xs px-3 py-1 rounded border border-brand-primary/30">
+              <Typography
+                variant="span"
+                className="bg-brand-primary/20 backdrop-blur-md text-brand-primary font-mono text-xs px-3 py-1 rounded border border-brand-primary/30"
+              >
                 DESTACADO
-              </span>
+              </Typography>
             </div>
           )
         }
@@ -107,13 +115,16 @@ if (isRowLayout) {
         <div class="flex flex-wrap gap-2">
           {
             project.techStack.map((tech) => (
-              <span class="bg-brand-surfaceContainerHighest text-brand-secondary font-mono text-xs px-3 py-1 rounded-full">
+              <Typography
+                variant="span"
+                className="bg-brand-surfaceContainerHighest text-brand-secondary font-mono text-xs px-3 py-1 rounded-full"
+              >
                 {tech}
-              </span>
+              </Typography>
             ))
           }
         </div>
       </div>
     </div>
-  </a>
+  </Anchor>
 </article>

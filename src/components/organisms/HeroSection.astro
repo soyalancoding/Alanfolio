@@ -3,8 +3,10 @@
 import Typography from "@/components/atoms/Typography.astro";
 import Button from "@/components/atoms/Button.astro";
 import OptimizedImage from "@/components/atoms/OptimizedImage.astro";
+
 // Data
 import profileData from "@/data/profile.json";
+
 // Assets
 import profileImage from "@/assets/images/profile.webp";
 import cvUrl from "@/assets/pdf/Alan Francisco Mora Gonzalez - Curriculum.pdf";
@@ -37,8 +39,9 @@ const profile = profileData;
     </div>
 
     <Typography variant="h1" className="text-brand-text mb-6 animate-fade-in">
-      Software Solutions <span class="text-gradient block md:inline"
-        >Development</span
+      Software Solutions <Typography
+        variant="span"
+        className="text-gradient block md:inline">Development</Typography
       >
     </Typography>
 
@@ -75,9 +78,10 @@ const profile = profileData;
   <div
     class="absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 opacity-40 hidden md:flex"
   >
-    <span
-      class="font-mono text-xs tracking-widest text-brand-textMuted uppercase"
-      >Scroll</span
+    <Typography
+      variant="span"
+      className="font-mono text-xs tracking-widest text-brand-textMuted uppercase"
+      >Scroll</Typography
     >
     <div class="w-0.5 h-12 bg-linear-to-b from-brand-primary to-transparent">
     </div>

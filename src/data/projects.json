@@ -61,7 +61,7 @@
     "description": "Recreación interactiva del popular juego Crossy Road. Utiliza tecnologías web 3D de vanguardia para ofrecer gráficos envolventes, físicas de colisión y una experiencia inmersiva sin necesidad de plugins externos.",
     "imageUrl": "/src/assets/images/projects/crossy-road.webp",
     "imageAlt": "Modelos 3D estilo voxel en un juego de obstáculos renderizado en el navegador.",
-    "category": "webgl",
+    "category": "game",
     "colSpan": "md:col-span-4",
     "techStack": ["Three.js", "JavaScript", "HTML5", "CSS3"],
     "isFeatured": false,

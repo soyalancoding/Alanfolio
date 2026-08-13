@@ -1,4 +1,9 @@
 ---
+// Components
+import Typography from "@/components/atoms/Typography.astro";
+import Button from "@/components/atoms/Button.astro";
+
+// Data
 import projectsData from "@/data/projects.json";
 
 const categories = Array.from(new Set(projectsData.map((p) => p.category)));
@@ -6,8 +11,9 @@ const categories = Array.from(new Set(projectsData.map((p) => p.category)));
 const categoryLabels: Record<string, string> = {
   "web-app": "Web App",
   webgl: "3D / WebGL",
-  mobile: "Mobile",
-  ai: "AI",
+  game: "Juegos",
+  mobile: "Aplicaciones Móviles",
+  ai: "Inteligencia Artificial",
   fullstack: "Fullstack",
   web3: "Web3",
 };
@@ -17,34 +23,32 @@ const formatLabel = (c: string) =>
 ---
 
 <div class="flex flex-wrap gap-4 mb-12 items-center" id="projects-filter">
-  <span
-    class="font-mono text-xs text-brand-outline uppercase tracking-widest mr-2"
-    >Filtrar por:</span
+  <Typography
+    variant="span"
+    className="font-mono text-xs text-brand-outline uppercase tracking-widest mr-2"
   >
-  <button
-    class="filter-btn active font-mono text-sm px-6 py-2 rounded-full border border-brand-border/30 hover:border-brand-primary/50 transition-all text-brand-text"
+    Filtrar por:
+  </Typography>
+  <Button
+    variant="filter"
+    size="sm"
+    shape="pill"
+    className="filter-btn active"
     data-filter="all"
   >
     Todos
-  </button>
+  </Button>
   {
     categories.map((category) => (
-      <button
-        class="filter-btn font-mono text-sm px-6 py-2 rounded-full border border-brand-border/30 hover:border-brand-primary/50 transition-all text-brand-text"
+      <Button
+        variant="filter"
+        size="sm"
+        shape="pill"
+        className="filter-btn"
         data-filter={category}
       >
         {formatLabel(category)}
-      </button>
+      </Button>
     ))
   }
 </div>
-
-<style>
-  /* Use Tailwind colors via classes inside the script for the active state, or a CSS variable approach. */
-  /* For simplicity, applying custom styles matching Tailwind theme */
-  .filter-btn.active {
-    background-color: #00daf3; /* brand-primary */
-    color: #0c0e12; /* brand-surfaceContainerLowest */
-    border-color: #00daf3;
-  }
-</style>
