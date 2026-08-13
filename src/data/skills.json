@@ -1,5 +1,6 @@
 {
   "frontend": [
+    { "name": "Vite", "icon": "vitejs" },
     { "name": "Astro", "icon": "astro" },
     { "name": "Angular", "icon": "angular" },
     { "name": "React", "icon": "react" },
@@ -27,6 +28,7 @@
   ],
   "tools": [
     { "name": "Jenkins", "icon": "jenkins" },
+    { "name": "Vitest", "icon": "vitest" },
     { "name": "Ansible", "icon": "ansible" },
     { "name": "RabbitMQ", "icon": "rabbitmq" },
     { "name": "Amazon Web Services", "icon": "amazonwebservices" },

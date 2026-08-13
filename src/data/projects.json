@@ -1,5 +1,188 @@
 [
   {
+    "slug": "masticket",
+    "title": "Masticket",
+    "shortDescription": "Plataforma de boletaje y gestión de eventos en vivo con capacidad para llenar recintos masivos y sistema multiperfil.",
+    "description": "Plataforma e-commerce y sistema operativo para la venta de boletos en línea. Ha gestionado exitosamente el llenado completo de más de tres teatros mediante una infraestructura robusta que soporta transacciones simultáneas, validación de accesos en tiempo real e integración con Stripe.",
+    "imageUrl": "/src/assets/images/projects/masticket.webp",
+    "imageAlt": "Interfaz de la plataforma de venta de boletos y gestión de eventos Masticket.",
+    "category": "web-app",
+    "colSpan": "md:col-span-8",
+    "techStack": [
+      "React",
+      "Tailwind CSS",
+      "TypeScript",
+      "Vite",
+      "Python",
+      "Django",
+      "PostgreSQL",
+      "Stripe API"
+    ],
+    "isFeatured": true,
+    "icon": "lucide:arrow-up-right",
+    "liveUrl": "https://masticket.com.mx/",
+    "githubUrl": "#",
+    "caseStudy": {
+      "challenge": "Construir una plataforma de boletaje de alta concurrencia capaz de procesar pagos masivos simultáneos sin duplicar asientos y proporcionar herramientas operativas en tiempo real para el control de acceso en puertas.",
+      "solution": "Desarrollo de una arquitectura e-commerce end-to-end con Django y React, implementando control transaccional estricto para selección de asientos, pagos mediante Stripe y un ecosistema multiperfil para administradores, promotores, checadores y compradores.",
+      "innovations": [
+        {
+          "title": "Ecosistema Multiperfil (4 Roles)",
+          "description": "Paneles dedicados para Administrador, Promotor de Eventos, Checador de Boletos y Cliente Final.",
+          "icon": "lucide:users"
+        },
+        {
+          "title": "Módulo Checador de Accesos",
+          "description": "Herramienta en tiempo real para validación y escaneo eficiente de entradas en puerta.",
+          "icon": "lucide:qr-code"
+        },
+        {
+          "title": "Venta Masiva y Pasarela de Pagos",
+          "description": "Procesamiento seguro de transacciones con Stripe optimizado para alta concurrencia.",
+          "icon": "lucide:ticket"
+        }
+      ],
+      "results": [
+        {
+          "value": "3+ Teatros",
+          "label": "Llenos Absolutos (Sold Out)"
+        },
+        {
+          "value": "4 Roles",
+          "label": "Admin / Promotor / Checador / Cliente"
+        },
+        {
+          "value": "100%",
+          "label": "Integridad en Transacciones"
+        },
+        {
+          "value": "< 1s",
+          "label": "Validación de Accesos"
+        }
+      ],
+      "testimonial": "\"Una infraestructura de boletaje confiable que nos permitió gestionar eventos masivos y coordinar el acceso del público sin demoras en puerta.\""
+    }
+  },
+  {
+    "slug": "renua",
+    "title": "Renúa",
+    "shortDescription": "Plataforma web médica para clínica de bienestar y estética con gestión de citas, múltiples perfiles de usuario y pagos con Stripe.",
+    "description": "Sitio web oficial y sistema de gestión integral para Renúa. Incluye agendamiento de citas, perfiles diferenciados para pacientes, doctores y administradores, integración de pagos en línea con Stripe y presentación de servicios de salud metabólica, dermatología y nutrición.",
+    "imageUrl": "/src/assets/images/projects/renua.webp",
+    "imageAlt": "Interfaz de la plataforma web de salud y estética integral Renúa.",
+    "category": "web-app",
+    "colSpan": "md:col-span-4",
+    "techStack": [
+      "React",
+      "Tailwind CSS",
+      "TypeScript",
+      "Vite",
+      "Python",
+      "Django",
+      "PostgreSQL",
+      "Stripe API"
+    ],
+    "isFeatured": true,
+    "icon": "lucide:arrow-up-right",
+    "liveUrl": "https://www.renuamed.com/",
+    "githubUrl": "#",
+    "caseStudy": {
+      "challenge": "Diseñar e implementar una plataforma médica integral que combinara una interfaz pública de alta gama con un sistema complejo de agendamiento de citas, procesamiento seguro de pagos y control de acceso basado en roles para pacientes, médicos y administradores.",
+      "solution": "Desarrollo de un sistema Full Stack con Django y React. Se implementaron módulos de agendamiento dinámico, integración con Stripe para el procesamiento de pagos de consultas y un panel con permisos granulares (RBAC) para la gestión operativa clínica.",
+      "innovations": [
+        {
+          "title": "Sistema de Agendamiento y Pasarela de Pagos",
+          "description": "Agenda de citas en tiempo real integrada con la API de Stripe para pagos fluidos y seguros.",
+          "icon": "lucide:calendar-check"
+        },
+        {
+          "title": "Arquitectura Multiperfil (RBAC)",
+          "description": "Paneles personalizados y control de accesos para Pacientes, Doctores y Administradores.",
+          "icon": "lucide:users"
+        },
+        {
+          "title": "Experiencia UI/UX Premium",
+          "description": "Diseño visual elegante alineado a la identidad de marca, optimizado para conversión.",
+          "icon": "lucide:sparkles"
+        }
+      ],
+      "results": [
+        {
+          "value": "100%",
+          "label": "Gestión de Citas Digital"
+        },
+        {
+          "value": "Stripe",
+          "label": "Pagos Seguros Integrados"
+        },
+        {
+          "value": "3 Roles",
+          "label": "Pacientes / Doctores / Admin"
+        },
+        {
+          "value": "< 1.2s",
+          "label": "Tiempo de Carga Digital"
+        }
+      ],
+      "testimonial": "\"Transforma tu confianza, renueva tu belleza: una plataforma digital que transmite a la perfección nuestra visión de bienestar e integra toda la gestión clínica en un solo lugar.\""
+    }
+  },
+  {
+    "slug": "modern-portfolio",
+    "title": "Modern Portfolio",
+    "shortDescription": "Diseño previo de portafolio profesional web centrado en una experiencia minimalista, intuitiva y responsiva.",
+    "description": "Versión previa de mi portafolio web personal diseñada para presentar trayectoria profesional, proyectos destacados y habilidades técnicas con una estética moderna, limpia y optimizada para la velocidad de carga.",
+    "imageUrl": "/src/assets/images/projects/modern-portfolio.webp",
+    "imageAlt": "Vista previa de la interfaz del portafolio web personal previo.",
+    "category": "web-app",
+    "colSpan": "md:col-span-4",
+    "techStack": ["React", "Tailwind CSS", "TypeScript", "Vite"],
+    "isFeatured": false,
+    "icon": "lucide:arrow-up-right",
+    "liveUrl": "https://alancoding.vercel.app/",
+    "githubUrl": "https://github.com/soyalancoding/Modern-Portfolio",
+    "caseStudy": {
+      "challenge": "Construir una carta de presentación digital minimalista que combinara rendimiento extremo, SEO optimizado y accesibilidad sin sobrecargar la experiencia visual.",
+      "solution": "Implementación de una arquitectura ligera basada en componentes reutilizables con un sistema de diseño modular usando utilidades CSS para garantizar carga instantánea.",
+      "innovations": [
+        {
+          "title": "Diseño Minimalista",
+          "description": "Enfoque centrado en la usabilidad, jerarquía visual clara y navegación intuitiva.",
+          "icon": "lucide:layout-template"
+        },
+        {
+          "title": "Carga Ultrarrápida",
+          "description": "Optimización de assets y empaquetado de componentes para tiempos de renderizado mínimos.",
+          "icon": "lucide:zap"
+        },
+        {
+          "title": "Layout Responsivo",
+          "description": "Adaptabilidad completa a cualquier tamaño de pantalla mediante unidades relativas y media queries.",
+          "icon": "lucide:smartphone"
+        }
+      ],
+      "results": [
+        {
+          "value": "100",
+          "label": "Performance Lighthouse"
+        },
+        {
+          "value": "< 0.5s",
+          "label": "Tiempo de Carga"
+        },
+        {
+          "value": "100%",
+          "label": "Accesibilidad Web"
+        },
+        {
+          "value": "0",
+          "label": "Layout Shifts (CLS)"
+        }
+      ],
+      "testimonial": "\"Un diseño sumamente limpio y profesional que destaca el contenido técnico sin distracciones innecesarias.\""
+    }
+  },
+  {
     "slug": "portfolio-macos-style",
     "title": "MacOS Big Sur Portfolio",
     "shortDescription": "Recreación meticulosa e interactiva de la interfaz de macOS Big Sur en el navegador, funcionando como un portafolio web dinámico.",
@@ -7,7 +190,7 @@
     "imageUrl": "/src/assets/images/projects/macos.webp",
     "imageAlt": "Interfaz interactiva que recrea el sistema operativo macOS Big Sur con ventanas de código y perfil abiertas.",
     "category": "web-app",
-    "colSpan": "md:col-span-8",
+    "colSpan": "md:col-span-4",
     "techStack": ["React", "Typescript", "Sass"],
     "isFeatured": true,
     "icon": "lucide:arrow-up-right",
@@ -55,8 +238,63 @@
     }
   },
   {
+    "slug": "data-mining-unam",
+    "title": "Proyectos y laboratorios de Mineria de datos",
+    "shortDescription": "Colección de algoritmos, modelos analíticos y pipelines de extracción de conocimiento desarrollados para la Facultad de Ingeniería, UNAM.",
+    "description": "Compendio de prácticas, algoritmos de aprendizaje automático y análisis exploratorio de datos enfocados en el descubrimiento de patrones, clasificación, agrupamiento (clustering) y preprocesamiento masivo de datos.",
+    "imageUrl": "/src/assets/images/projects/data-mining.webp",
+    "imageAlt": "Visualizaciones gráficas de clusters de datos y código de modelos analíticos en Python.",
+    "category": "data-science",
+    "colSpan": "md:col-span-4",
+    "techStack": ["Python", "Jupyter", "Pandas", "Scikit-Learn", "NumPy"],
+    "isFeatured": false,
+    "icon": "lucide:arrow-up-right",
+    "liveUrl": "#",
+    "githubUrl": "https://github.com/soyalancoding/Data-Mining",
+    "caseStudy": {
+      "challenge": "Procesar conjuntos de datos complejos, heterogéneos y con ruido para extraer patrones significativos utilizando técnicas avanzadas de minería de datos.",
+      "solution": "Desarrollo de pipelines completos de ciencia de datos que abarcan desde la limpieza y transformación de datos hasta la evaluación rigurosa de modelos estadísticos y de Machine Learning.",
+      "innovations": [
+        {
+          "title": "Preprocesamiento de Datos",
+          "description": "Técnicas avanzadas de limpieza, imputación de valores faltantes y reducción de dimensionalidad.",
+          "icon": "lucide:database"
+        },
+        {
+          "title": "Modelos de Clustering y Clasificación",
+          "description": "Implementación y ajuste de hiperparámetros para algoritmos supervisados y no supervisados.",
+          "icon": "lucide:cpu"
+        },
+        {
+          "title": "Visualización Analítica",
+          "description": "Generación de gráficos y métricas estadísticas para la interpretación clara de hallazgos.",
+          "icon": "lucide:bar-chart-3"
+        }
+      ],
+      "results": [
+        {
+          "value": "90%+",
+          "label": "Precisión en Modelos"
+        },
+        {
+          "value": "100%",
+          "label": "Cobertura de Pipeline"
+        },
+        {
+          "value": "5+",
+          "label": "Algoritmos Implementados"
+        },
+        {
+          "value": "UNAM",
+          "label": "Rigor Académico"
+        }
+      ],
+      "testimonial": "\"Excelente aplicación de conceptos teórico-prácticos para el análisis estructurado de grandes volúmenes de datos.\""
+    }
+  },
+  {
     "slug": "crossy-road-3d",
-    "title": "Crossy Road 3D Game",
+    "title": "Crossy Road Game",
     "shortDescription": "Videojuego 3D ejecutable directamente en el navegador web con renderizado en tiempo real utilizando Three.js.",
     "description": "Recreación interactiva del popular juego Crossy Road. Utiliza tecnologías web 3D de vanguardia para ofrecer gráficos envolventes, físicas de colisión y una experiencia inmersiva sin necesidad de plugins externos.",
     "imageUrl": "/src/assets/images/projects/crossy-road.webp",
@@ -117,7 +355,7 @@
     "imageUrl": "/src/assets/images/projects/crypto-market.webp",
     "imageAlt": "Pantallas móviles mostrando el listado y métricas de mercado de criptomonedas.",
     "category": "mobile",
-    "colSpan": "md:col-span-12",
+    "colSpan": "md:col-span-8",
     "techStack": ["React Native", "Expo", "JavaScript", "CoinGecko API"],
     "isFeatured": false,
     "icon": "lucide:arrow-up-right",

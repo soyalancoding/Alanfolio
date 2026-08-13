@@ -9,13 +9,11 @@ import projectsData from "@/data/projects.json";
 const categories = Array.from(new Set(projectsData.map((p) => p.category)));
 
 const categoryLabels: Record<string, string> = {
-  "web-app": "Web App",
-  webgl: "3D / WebGL",
+  "web-app": "Aplicaciones Web",
   game: "Juegos",
   mobile: "Aplicaciones Móviles",
   ai: "Inteligencia Artificial",
-  fullstack: "Fullstack",
-  web3: "Web3",
+  "data-science": "Ciencias de Datos",
 };
 
 const formatLabel = (c: string) =>

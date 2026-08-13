@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 
 const techs = {
+  Vite: "vitejs",
   Astro: "astro",
   Angular: "angular",
   React: "react",
@@ -25,6 +26,7 @@ const techs = {
   MySQL: "mysql",
   PostgreSQL: "postgresql",
   Jenkins: "jenkins",
+  Vitest: "vitest",
   Ansible: "ansible",
   RabbitMQ: "rabbitmq",
   "Amazon Web Services": "amazonwebservices",
