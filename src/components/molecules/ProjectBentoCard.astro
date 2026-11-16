@@ -66,32 +66,26 @@ if (isRowLayout) {
   >
     <div class={cardClass}>
       <div class={imageContainerClass}>
-        {
-          project.isFeatured && (
-            <div class="absolute inset-0 bg-linear-to-t from-brand-background to-transparent z-10 opacity-60" />
-          )
-        }
-        {
-          imageSource && (
-            <OptimizedImage
-              src={imageSource}
-              alt={project.imageAlt || project.title}
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            />
-          )
-        }
-        {
-          project.isFeatured && (
-            <div class="absolute top-4 left-4 z-20">
-              <Typography
-                variant="span"
-                className="bg-brand-primary/20 backdrop-blur-md text-brand-primary font-mono text-xs px-3 py-1 rounded border border-brand-primary/30"
-              >
-                DESTACADO
-              </Typography>
-            </div>
-          )
-        }
+        {project.isFeatured && (
+          <div class="absolute inset-0 bg-linear-to-t from-brand-background to-transparent z-10 opacity-60" />
+        )}
+        {imageSource && (
+          <OptimizedImage
+            src={imageSource}
+            alt={project.imageAlt || project.title}
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+        )}
+        {project.isFeatured && (
+          <div class="absolute top-4 left-4 z-20">
+            <Typography
+              variant="span"
+              className="bg-brand-primary/20 backdrop-blur-md text-brand-primary font-mono text-xs px-3 py-1 rounded border border-brand-primary/30"
+            >
+              DESTACADO
+            </Typography>
+          </div>
+        )}
       </div>
 
       <div
@@ -101,28 +95,24 @@ if (isRowLayout) {
           <Typography variant="h3" className="text-brand-onSurface m-0">
             {project.title}
           </Typography>
-          {
-            project.icon && (
-              <div class="text-brand-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
-                <Icon name={project.icon} size="md" />
-              </div>
-            )
-          }
+          {project.icon && (
+            <div class="text-brand-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
+              <Icon name={project.icon} size="md" />
+            </div>
+          )}
         </div>
         <Typography variant="body" className="text-brand-textMuted mb-6">
           {project.description}
         </Typography>
         <div class="flex flex-wrap gap-2">
-          {
-            project.techStack.map((tech) => (
-              <Typography
-                variant="span"
-                className="bg-brand-surfaceContainerHighest text-brand-secondary font-mono text-xs px-3 py-1 rounded-full"
-              >
-                {tech}
-              </Typography>
-            ))
-          }
+          {project.techStack.map((tech) => (
+            <Typography
+              variant="span"
+              className="bg-brand-surfaceContainerHighest text-brand-secondary font-mono text-xs px-3 py-1 rounded-full"
+            >
+              {tech}
+            </Typography>
+          ))}
         </div>
       </div>
     </div>

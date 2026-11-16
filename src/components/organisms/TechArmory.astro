@@ -11,9 +11,10 @@ import skillsData from "@/data/skills.json";
   <div class="flex flex-col md:flex-row items-end justify-between gap-8 mb-16">
     <div>
       <Typography variant="h2" className="mb-4">
-        Tech <Typography variant="span" className="text-brand-primary"
-          >Stack</Typography
-        >
+        Tech{" "}
+        <Typography variant="span" className="text-brand-primary">
+          Stack
+        </Typography>
       </Typography>
       <Typography variant="body" className="max-w-md">
         Las herramientas y lenguajes que utilizo para crear experiencias
@@ -29,14 +30,10 @@ import skillsData from "@/data/skills.json";
       <Typography variant="h3" className="mb-8 text-brand-secondary">
         Frontend
       </Typography>
-      <div
-        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
-      >
-        {
-          skillsData.frontend.map((skill: { name: string; icon: string }) => (
-            <TechCard name={skill.name} icon={skill.icon} />
-          ))
-        }
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        {skillsData.frontend.map((skill: { name: string; icon: string }) => (
+          <TechCard name={skill.name} icon={skill.icon} />
+        ))}
       </div>
     </div>
 
@@ -45,14 +42,10 @@ import skillsData from "@/data/skills.json";
       <Typography variant="h3" className="mb-8 text-brand-primary">
         Backend y bases de datos
       </Typography>
-      <div
-        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
-      >
-        {
-          skillsData.backend.map((skill: { name: string; icon: string }) => (
-            <TechCard name={skill.name} icon={skill.icon} />
-          ))
-        }
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        {skillsData.backend.map((skill: { name: string; icon: string }) => (
+          <TechCard name={skill.name} icon={skill.icon} />
+        ))}
       </div>
     </div>
 
@@ -61,14 +54,10 @@ import skillsData from "@/data/skills.json";
       <Typography variant="h3" className="mb-8 text-brand-text">
         DevOps y herramientas
       </Typography>
-      <div
-        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
-      >
-        {
-          skillsData.tools.map((skill: { name: string; icon: string }) => (
-            <TechCard name={skill.name} icon={skill.icon} />
-          ))
-        }
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        {skillsData.tools.map((skill: { name: string; icon: string }) => (
+          <TechCard name={skill.name} icon={skill.icon} />
+        ))}
       </div>
     </div>
   </div>

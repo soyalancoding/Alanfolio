@@ -30,16 +30,14 @@ import cvUrl from "@/assets/pdf/Alan Francisco Mora Gonzalez - Curriculum.pdf";
       </Typography>
 
       <div class="space-y-4">
-        {
-          profileData.bio.map((paragraph: string) => (
-            <Typography
-              variant="body"
-              className="max-w-xl text-base leading-relaxed"
-            >
-              {paragraph}
-            </Typography>
-          ))
-        }
+        {profileData.bio.map((paragraph: string) => (
+          <Typography
+            variant="body"
+            className="max-w-xl text-base leading-relaxed"
+          >
+            {paragraph}
+          </Typography>
+        ))}
       </div>
 
       <div class="flex flex-col sm:flex-row gap-4 pt-4">
@@ -47,9 +45,11 @@ import cvUrl from "@/assets/pdf/Alan Francisco Mora Gonzalez - Curriculum.pdf";
           Descargar CV
         </Button>
         <Button
-          href={profileData.social.find(
-            (s: { name: string; url: string }) => s.name === "GitHub",
-          )?.url || "#"}
+          href={
+            profileData.social.find(
+              (s: { name: string; url: string }) => s.name === "GitHub",
+            )?.url || "#"
+          }
           variant="ghost"
           size="lg"
           shape="lg"
@@ -61,18 +61,14 @@ import cvUrl from "@/assets/pdf/Alan Francisco Mora Gonzalez - Curriculum.pdf";
     </div>
 
     <div class="md:col-span-5 relative">
-      <div
-        class="aspect-square rounded-2xl overflow-hidden glass-card ghost-border rotate-2 hover:rotate-0 transition-transform duration-500 shadow-[0_0_30px_rgba(0,218,243,0.1)]"
-      >
+      <div class="aspect-square rounded-2xl overflow-hidden glass-card ghost-border rotate-2 hover:rotate-0 transition-transform duration-500 shadow-[0_0_30px_rgba(0,218,243,0.1)]">
         <OptimizedImage
           src={profileImage}
           alt={profileData.name}
           class="w-full h-full object-cover"
         />
       </div>
-      <div
-        class="absolute -bottom-6 -left-6 glass-card p-6 rounded-xl hidden md:block ghost-border"
-      >
+      <div class="absolute -bottom-6 -left-6 glass-card p-6 rounded-xl hidden md:block ghost-border">
         <Typography variant="label-muted" className="text-brand-tertiary">
           Estatus: {profileData.status}
         </Typography>

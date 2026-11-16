@@ -15,12 +15,8 @@ const darkIcons = ["bash", "flask", "github", "django"];
 const isDarkIcon = darkIcons.includes(icon);
 ---
 
-<div
-  class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-brand-primary/40 transition-all group ghost-border bg-brand-surfaceHighlight/50"
->
-  <div
-    class="w-12 h-12 flex items-center justify-center group-hover:scale-110 transition-transform"
-  >
+<div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-brand-primary/40 transition-all group ghost-border bg-brand-surfaceHighlight/50">
+  <div class="w-12 h-12 flex items-center justify-center group-hover:scale-110 transition-transform">
     <SvgIcon
       src={`/technologies/${icon}.svg`}
       alt={`${name} icon`}

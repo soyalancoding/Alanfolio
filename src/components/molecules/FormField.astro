@@ -28,25 +28,23 @@ const baseInputClasses =
 <div class="space-y-2">
   <Typography variant="label-muted">{label}</Typography>
 
-  {
-    type === "textarea" ? (
-      <textarea
-        id={id}
-        name={name}
-        rows={rows}
-        placeholder={placeholder}
-        required={required}
-        class={baseInputClasses}
-      />
-    ) : (
-      <input
-        id={id}
-        name={name}
-        type={type}
-        placeholder={placeholder}
-        required={required}
-        class={baseInputClasses}
-      />
-    )
-  }
+  {type === "textarea" ? (
+    <textarea
+      id={id}
+      name={name}
+      rows={rows}
+      placeholder={placeholder}
+      required={required}
+      class={baseInputClasses}
+    />
+  ) : (
+    <input
+      id={id}
+      name={name}
+      type={type}
+      placeholder={placeholder}
+      required={required}
+      class={baseInputClasses}
+    />
+  )}
 </div>

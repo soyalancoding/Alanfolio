@@ -36,17 +36,15 @@ const formatLabel = (c: string) =>
   >
     Todos
   </Button>
-  {
-    categories.map((category) => (
-      <Button
-        variant="filter"
-        size="sm"
-        shape="pill"
-        className="filter-btn"
-        data-filter={category}
-      >
-        {formatLabel(category)}
-      </Button>
-    ))
-  }
+  {categories.map((category) => (
+    <Button
+      variant="filter"
+      size="sm"
+      shape="pill"
+      className="filter-btn"
+      data-filter={category}
+    >
+      {formatLabel(category)}
+    </Button>
+  ))}
 </div>

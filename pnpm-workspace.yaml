@@ -5,19 +5,26 @@ allowBuilds:
 minimumReleaseAge: 10080
 
 minimumReleaseAgeExclude:
-  - "@iconify-json/lucide@1.2.123"
+  - "@iconify-json/lucide@1.2.123 || 1.2.155"
   - "@types/node@26.2.0"
-  - "@typescript-eslint/eslint-plugin@8.67.0"
-  - "@typescript-eslint/parser@8.67.0"
-  - "@typescript-eslint/project-service@8.67.0"
-  - "@typescript-eslint/scope-manager@8.67.0"
-  - "@typescript-eslint/tsconfig-utils@8.67.0"
-  - "@typescript-eslint/type-utils@8.67.0"
-  - "@typescript-eslint/types@8.67.0"
-  - "@typescript-eslint/typescript-estree@8.67.0"
-  - "@typescript-eslint/utils@8.67.0"
-  - "@typescript-eslint/visitor-keys@8.67.0"
-  - astro@7.2.1
-  - typescript-eslint@8.67.0
+  - "@typescript-eslint/eslint-plugin@8.67.0 || 8.73.0"
+  - "@typescript-eslint/parser@8.67.0 || 8.73.0"
+  - "@typescript-eslint/project-service@8.67.0 || 8.73.0"
+  - "@typescript-eslint/scope-manager@8.67.0 || 8.73.0"
+  - "@typescript-eslint/tsconfig-utils@8.67.0 || 8.73.0"
+  - "@typescript-eslint/type-utils@8.67.0 || 8.73.0"
+  - "@typescript-eslint/types@8.67.0 || 8.73.0"
+  - "@typescript-eslint/typescript-estree@8.67.0 || 8.73.0"
+  - "@typescript-eslint/utils@8.67.0 || 8.73.0"
+  - "@typescript-eslint/visitor-keys@8.67.0 || 8.73.0"
+  - astro@7.2.1 || 7.4.12
+  - typescript-eslint@8.67.0 || 8.73.0
+  - "@astrojs/internal-helpers@0.13.2"
+  - "@astrojs/markdown-satteri@0.4.10"
+  - "@astrojs/runtime@0.1.1"
+  - "@astrojs/vite-plugin-astro@0.1.3"
+  - "@eslint/config-array@0.23.6"
+  - eslint@10.15.0
+  - prettier@3.10.1
 
 trustPolicy: no-downgrade

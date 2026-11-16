@@ -72,21 +72,19 @@ const classes =
 const resolvedRel = target === "_blank" && !rel ? "noopener noreferrer" : rel;
 ---
 
-{
-  href ? (
-    <Anchor
-      href={href}
-      className={classes}
-      target={target}
-      rel={resolvedRel}
-      data-filter={dataFilter}
-      {...rest}
-    >
-      <slot />
-    </Anchor>
-  ) : (
-    <button type={type} class={classes} data-filter={dataFilter} {...rest}>
-      <slot />
-    </button>
-  )
-}
+{href ? (
+  <Anchor
+    href={href}
+    className={classes}
+    target={target}
+    rel={resolvedRel}
+    data-filter={dataFilter}
+    {...rest}
+  >
+    <slot />
+  </Anchor>
+) : (
+  <button type={type} class={classes} data-filter={dataFilter} {...rest}>
+    <slot />
+  </button>
+)}

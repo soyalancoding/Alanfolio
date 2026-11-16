@@ -53,55 +53,44 @@ if (!isRemote && project.imageUrl) {
         </Typography>
       </div>
       <div class="flex flex-wrap gap-4">
-        {
-          project.liveUrl !== "#" && (
-            <Button
-              href={project.liveUrl}
-              variant="cta"
-              size="lg"
-              shape="lg"
-              className="flex items-center gap-2"
-              target="_blank"
-            >
-              <Icon name="lucide:rocket" size="sm" />
-              Live Demo
-            </Button>
-          )
-        }
-        {
-          project.githubUrl !== "#" && (
-            <Button
-              href={project.githubUrl}
-              variant="outline"
-              size="lg"
-              shape="lg"
-              className="flex items-center gap-2"
-              target="_blank"
-            >
-              <Icon name="lucide:code" size="sm" />
-              View GitHub
-            </Button>
-          )
-        }
+        {project.liveUrl !== "#" && (
+          <Button
+            href={project.liveUrl}
+            variant="cta"
+            size="lg"
+            shape="lg"
+            className="flex items-center gap-2"
+            target="_blank"
+          >
+            <Icon name="lucide:rocket" size="sm" />
+            Live Demo
+          </Button>
+        )}
+        {project.githubUrl !== "#" && (
+          <Button
+            href={project.githubUrl}
+            variant="outline"
+            size="lg"
+            shape="lg"
+            className="flex items-center gap-2"
+            target="_blank"
+          >
+            <Icon name="lucide:code" size="sm" />
+            View GitHub
+          </Button>
+        )}
       </div>
     </div>
     <div class="lg:col-span-7">
-      <div
-        class="relative rounded-2xl overflow-hidden glass-card p-2 shadow-2xl transition-all duration-700 opacity-100 translate-y-0"
-      >
-        {
-          imageSource && (
-            <OptimizedImage
-              src={imageSource}
-              alt={project.imageAlt || project.title}
-              class="w-full aspect-video object-cover rounded-xl"
-            />
-          )
-        }
-        <div
-          class="absolute inset-0 bg-linear-to-t from-brand-background/40 to-transparent pointer-events-none"
-        >
-        </div>
+      <div class="relative rounded-2xl overflow-hidden glass-card p-2 shadow-2xl transition-all duration-700 opacity-100 translate-y-0">
+        {imageSource && (
+          <OptimizedImage
+            src={imageSource}
+            alt={project.imageAlt || project.title}
+            class="w-full aspect-video object-cover rounded-xl"
+          />
+        )}
+        <div class="absolute inset-0 bg-linear-to-t from-brand-background/40 to-transparent pointer-events-none"></div>
       </div>
     </div>
   </div>

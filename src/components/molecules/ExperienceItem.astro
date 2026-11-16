@@ -25,174 +25,170 @@ const {
 } = Astro.props;
 ---
 
-<div
-  class="relative mb-20 md:flex md:justify-between items-center w-full group"
->
-  {
-    isLeft ? (
-      <>
-        {showFullDetails ? (
-          <div class="md:w-[45%] glass-card p-8 rounded-xl ghost-border hover:border-brand-primary/40 transition-colors group-hover:border-brand-primary/40 text-left">
-            <Typography
-              variant="span"
-              className="md:hidden font-mono text-xs text-brand-secondary font-bold mb-4 block uppercase tracking-wider"
-            >
-              {period}
-            </Typography>
-            <Typography
-              variant="h3"
-              className="mb-1 group-hover:text-brand-primary transition-colors"
-            >
-              {role}
-            </Typography>
-            <Typography
-              variant="label"
-              className="text-brand-textMuted mb-6 inline-block"
-            >
-              {company}
-            </Typography>
+<div class="relative mb-20 md:flex md:justify-between items-center w-full group">
+  {isLeft ? (
+    <>
+      {showFullDetails ? (
+        <div class="md:w-[45%] glass-card p-8 rounded-xl ghost-border hover:border-brand-primary/40 transition-colors group-hover:border-brand-primary/40 text-left">
+          <Typography
+            variant="span"
+            className="md:hidden font-mono text-xs text-brand-secondary font-bold mb-4 block uppercase tracking-wider"
+          >
+            {period}
+          </Typography>
+          <Typography
+            variant="h3"
+            className="mb-1 group-hover:text-brand-primary transition-colors"
+          >
+            {role}
+          </Typography>
+          <Typography
+            variant="label"
+            className="text-brand-textMuted mb-6 inline-block"
+          >
+            {company}
+          </Typography>
 
-            <ul class="space-y-4">
-              {tasks.map((task: string) => (
-                <li class="flex gap-3 items-start">
-                  <Icon
-                    name="lucide:check-circle-2"
-                    size="sm"
-                    className="text-brand-primary shrink-0 mt-1"
-                  />
-                  <Typography
-                    variant="body"
-                    className="text-xs text-brand-textMuted"
-                  >
-                    {task}
-                  </Typography>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ) : (
-          <div class="md:w-[45%] glass-card p-8 rounded-xl ghost-border hover:border-brand-primary/40 transition-colors group-hover:border-brand-primary/40 md:text-right">
-            <Typography
-              variant="span"
-              className="font-mono text-xs text-brand-primary mb-2 block uppercase tracking-wider"
-            >
-              {period}
-            </Typography>
-            <Typography
-              variant="h3"
-              className="mb-1 group-hover:text-brand-primary transition-colors"
-            >
-              {role}
-            </Typography>
-            <Typography
-              variant="label"
-              className="text-brand-textMuted mb-4 inline-block"
-            >
-              {company}
-            </Typography>
-            <Typography variant="body" className="">
-              {description}
-            </Typography>
-          </div>
-        )}
+          <ul class="space-y-4">
+            {tasks.map((task: string) => (
+              <li class="flex gap-3 items-start">
+                <Icon
+                  name="lucide:check-circle-2"
+                  size="sm"
+                  className="text-brand-primary shrink-0 mt-1"
+                />
+                <Typography
+                  variant="body"
+                  className="text-xs text-brand-textMuted"
+                >
+                  {task}
+                </Typography>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : (
+        <div class="md:w-[45%] glass-card p-8 rounded-xl ghost-border hover:border-brand-primary/40 transition-colors group-hover:border-brand-primary/40 md:text-right">
+          <Typography
+            variant="span"
+            className="font-mono text-xs text-brand-primary mb-2 block uppercase tracking-wider"
+          >
+            {period}
+          </Typography>
+          <Typography
+            variant="h3"
+            className="mb-1 group-hover:text-brand-primary transition-colors"
+          >
+            {role}
+          </Typography>
+          <Typography
+            variant="label"
+            className="text-brand-textMuted mb-4 inline-block"
+          >
+            {company}
+          </Typography>
+          <Typography variant="body" className="">
+            {description}
+          </Typography>
+        </div>
+      )}
 
-        <div class="absolute top-1/2 -translate-y-1/2 -left-4 -translate-x-1/2 md:left-1/2 w-4 h-4 rounded-full bg-brand-primary z-10 border-4 border-brand-background group-hover:shadow-[0_0_10px_#00daf3] transition-colors" />
+      <div class="absolute top-1/2 -translate-y-1/2 -left-4 -translate-x-1/2 md:left-1/2 w-4 h-4 rounded-full bg-brand-primary z-10 border-4 border-brand-background group-hover:shadow-[0_0_10px_#00daf3] transition-colors" />
 
-        {showFullDetails ? (
-          <div class="hidden md:flex md:w-[45%] items-center justify-start md:pl-6">
-            <Typography
-              variant="span"
-              className="font-mono text-xs text-brand-secondary font-bold uppercase tracking-wider"
-            >
-              {period}
-            </Typography>
-          </div>
-        ) : (
-          <div class="hidden md:block md:w-[45%]" />
-        )}
-      </>
-    ) : (
-      <>
-        {showFullDetails ? (
-          <div class="hidden md:flex md:w-[45%] items-center justify-end md:pr-6">
-            <Typography
-              variant="span"
-              className="font-mono text-xs text-brand-primary font-bold uppercase tracking-wider"
-            >
-              {period}
-            </Typography>
-          </div>
-        ) : (
-          <div class="hidden md:block md:w-[45%]" />
-        )}
+      {showFullDetails ? (
+        <div class="hidden md:flex md:w-[45%] items-center justify-start md:pl-6">
+          <Typography
+            variant="span"
+            className="font-mono text-xs text-brand-secondary font-bold uppercase tracking-wider"
+          >
+            {period}
+          </Typography>
+        </div>
+      ) : (
+        <div class="hidden md:block md:w-[45%]" />
+      )}
+    </>
+  ) : (
+    <>
+      {showFullDetails ? (
+        <div class="hidden md:flex md:w-[45%] items-center justify-end md:pr-6">
+          <Typography
+            variant="span"
+            className="font-mono text-xs text-brand-primary font-bold uppercase tracking-wider"
+          >
+            {period}
+          </Typography>
+        </div>
+      ) : (
+        <div class="hidden md:block md:w-[45%]" />
+      )}
 
-        <div class="absolute top-1/2 -translate-y-1/2 -left-4 -translate-x-1/2 md:left-1/2 w-4 h-4 rounded-full bg-brand-primary z-10 border-4 border-brand-background group-hover:shadow-[0_0_10px_#00daf3] transition-colors" />
+      <div class="absolute top-1/2 -translate-y-1/2 -left-4 -translate-x-1/2 md:left-1/2 w-4 h-4 rounded-full bg-brand-primary z-10 border-4 border-brand-background group-hover:shadow-[0_0_10px_#00daf3] transition-colors" />
 
-        {showFullDetails ? (
-          <div class="md:w-[45%] glass-card p-8 rounded-xl ghost-border hover:border-brand-primary/40 transition-colors group-hover:border-brand-primary/40">
-            <Typography
-              variant="span"
-              className="md:hidden font-mono text-xs text-brand-primary font-bold mb-4 block uppercase tracking-wider"
-            >
-              {period}
-            </Typography>
-            <Typography
-              variant="h3"
-              className="mb-1 group-hover:text-brand-primary transition-colors"
-            >
-              {role}
-            </Typography>
-            <Typography
-              variant="label"
-              className="text-brand-textMuted mb-6 inline-block"
-            >
-              {company}
-            </Typography>
+      {showFullDetails ? (
+        <div class="md:w-[45%] glass-card p-8 rounded-xl ghost-border hover:border-brand-primary/40 transition-colors group-hover:border-brand-primary/40">
+          <Typography
+            variant="span"
+            className="md:hidden font-mono text-xs text-brand-primary font-bold mb-4 block uppercase tracking-wider"
+          >
+            {period}
+          </Typography>
+          <Typography
+            variant="h3"
+            className="mb-1 group-hover:text-brand-primary transition-colors"
+          >
+            {role}
+          </Typography>
+          <Typography
+            variant="label"
+            className="text-brand-textMuted mb-6 inline-block"
+          >
+            {company}
+          </Typography>
 
-            <ul class="space-y-4">
-              {tasks.map((task: string) => (
-                <li class="flex gap-3 items-start">
-                  <Icon
-                    name="lucide:check-circle-2"
-                    size="sm"
-                    className="text-brand-primary shrink-0 mt-1"
-                  />
-                  <Typography
-                    variant="body"
-                    className="text-xs text-brand-textMuted"
-                  >
-                    {task}
-                  </Typography>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ) : (
-          <div class="md:w-[45%] glass-card p-8 rounded-xl ghost-border hover:border-brand-primary/40 transition-colors group-hover:border-brand-primary/40">
-            <Typography
-              variant="span"
-              className="font-mono text-xs text-brand-primary mb-2 block uppercase tracking-wider"
-            >
-              {period}
-            </Typography>
-            <Typography
-              variant="h3"
-              className="mb-1 group-hover:text-brand-primary transition-colors"
-            >
-              {role}
-            </Typography>
-            <Typography
-              variant="label"
-              className="text-brand-textMuted mb-4 inline-block"
-            >
-              {company}
-            </Typography>
-            <Typography variant="body" className="">
-              {description}
-            </Typography>
-          </div>
-        )}
-      </>
-    )
-  }
+          <ul class="space-y-4">
+            {tasks.map((task: string) => (
+              <li class="flex gap-3 items-start">
+                <Icon
+                  name="lucide:check-circle-2"
+                  size="sm"
+                  className="text-brand-primary shrink-0 mt-1"
+                />
+                <Typography
+                  variant="body"
+                  className="text-xs text-brand-textMuted"
+                >
+                  {task}
+                </Typography>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : (
+        <div class="md:w-[45%] glass-card p-8 rounded-xl ghost-border hover:border-brand-primary/40 transition-colors group-hover:border-brand-primary/40">
+          <Typography
+            variant="span"
+            className="font-mono text-xs text-brand-primary mb-2 block uppercase tracking-wider"
+          >
+            {period}
+          </Typography>
+          <Typography
+            variant="h3"
+            className="mb-1 group-hover:text-brand-primary transition-colors"
+          >
+            {role}
+          </Typography>
+          <Typography
+            variant="label"
+            className="text-brand-textMuted mb-4 inline-block"
+          >
+            {company}
+          </Typography>
+          <Typography variant="body" className="">
+            {description}
+          </Typography>
+        </div>
+      )}
+    </>
+  )}
 </div>

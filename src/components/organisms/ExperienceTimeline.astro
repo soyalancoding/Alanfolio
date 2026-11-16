@@ -17,56 +17,49 @@ const { showFullDetails = false } = Astro.props;
   <div class="max-w-4xl mx-auto">
     <Typography
       variant="h2"
-      className={showFullDetails
-        ? "mb-20 text-center"
-        : "mb-16 flex items-center gap-4"}
+      className={
+        showFullDetails ? "mb-20 text-center" : "mb-16 flex items-center gap-4"
+      }
     >
       {!showFullDetails && <span class="w-12 h-px bg-brand-primary" />}
-      {
-        showFullDetails ? (
-          <>
-            Experiencia{" "}
-            <Typography variant="span" className="text-brand-secondary">
-              Laboral
-            </Typography>
-          </>
-        ) : (
-          "Experiencia profesional"
-        )
-      }
+      {showFullDetails ? (
+        <>
+          Experiencia{" "}
+          <Typography variant="span" className="text-brand-secondary">
+            Laboral
+          </Typography>
+        </>
+      ) : (
+        "Experiencia profesional"
+      )}
     </Typography>
 
     <div class="relative pl-8 md:pl-0">
       <!-- Vertical Timeline Line -->
-      <div
-        class="absolute left-4 -translate-x-1/2 md:left-1/2 top-0 bottom-0 w-0.5 timeline-line"
-      >
-      </div>
+      <div class="absolute left-4 -translate-x-1/2 md:left-1/2 top-0 bottom-0 w-0.5 timeline-line"></div>
 
-      {
-        experienceData.map(
-          (
-            exp: {
-              role: string;
-              company: string;
-              period: string;
-              description: string;
-              tasks?: string[];
-            },
-            index: number,
-          ) => (
-            <ExperienceItem
-              role={exp.role}
-              company={exp.company}
-              period={exp.period}
-              description={exp.description}
-              tasks={exp.tasks}
-              showFullDetails={showFullDetails}
-              isLeft={index % 2 !== 0}
-            />
-          ),
-        )
-      }
+      {experienceData.map(
+        (
+          exp: {
+            role: string;
+            company: string;
+            period: string;
+            description: string;
+            tasks?: string[];
+          },
+          index: number,
+        ) => (
+          <ExperienceItem
+            role={exp.role}
+            company={exp.company}
+            period={exp.period}
+            description={exp.description}
+            tasks={exp.tasks}
+            showFullDetails={showFullDetails}
+            isLeft={index % 2 !== 0}
+          />
+        ),
+      )}
     </div>
   </div>
 </section>

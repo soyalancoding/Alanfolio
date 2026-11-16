@@ -31,34 +31,32 @@ const finalWidth = width || (isRemote ? 800 : undefined);
 const finalHeight = height || (isRemote ? 600 : undefined);
 ---
 
-{
-  isLocalImport ? (
-    <Image
-      src={src}
-      alt={alt}
-      class={className}
-      loading={loading}
-      width={width}
-      height={height}
-    />
-  ) : finalWidth && finalHeight ? (
-    <Image
-      src={src}
-      alt={alt}
-      class={className}
-      loading={loading}
-      width={finalWidth}
-      height={finalHeight}
-    />
-  ) : (
-    <Image
-      src={src}
-      alt={alt}
-      class={className}
-      loading={loading}
-      inferSize={true}
-      width={finalWidth}
-      height={finalHeight}
-    />
-  )
-}
+{isLocalImport ? (
+  <Image
+    src={src}
+    alt={alt}
+    class={className}
+    loading={loading}
+    width={width}
+    height={height}
+  />
+) : finalWidth && finalHeight ? (
+  <Image
+    src={src}
+    alt={alt}
+    class={className}
+    loading={loading}
+    width={finalWidth}
+    height={finalHeight}
+  />
+) : (
+  <Image
+    src={src}
+    alt={alt}
+    class={className}
+    loading={loading}
+    inferSize={true}
+    width={finalWidth}
+    height={finalHeight}
+  />
+)}

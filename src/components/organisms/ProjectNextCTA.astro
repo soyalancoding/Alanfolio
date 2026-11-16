@@ -43,23 +43,16 @@ if (!isRemote && nextProject.imageUrl) {
       href={`/projects/${nextProject.slug}`}
     >
       <div class="absolute inset-0 z-0">
-        {
-          imageSource && (
-            <OptimizedImage
-              src={imageSource}
-              alt={nextProject.title}
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-            />
-          )
-        }
-        <div
-          class="absolute inset-0 bg-brand-background/80 group-hover:bg-brand-background/60 transition-colors"
-        >
-        </div>
+        {imageSource && (
+          <OptimizedImage
+            src={imageSource}
+            alt={nextProject.title}
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+        )}
+        <div class="absolute inset-0 bg-brand-background/80 group-hover:bg-brand-background/60 transition-colors"></div>
       </div>
-      <div
-        class="relative z-10 h-full flex flex-col items-center justify-center text-center p-8"
-      >
+      <div class="relative z-10 h-full flex flex-col items-center justify-center text-center p-8">
         <Typography
           variant="label"
           className="text-brand-secondary uppercase tracking-widest mb-4"
@@ -72,9 +65,7 @@ if (!isRemote && nextProject.imageUrl) {
         >
           {nextProject.title}
         </Typography>
-        <div
-          class="flex items-center gap-2 font-bold group-hover:gap-4 transition-all text-brand-text"
-        >
+        <div class="flex items-center gap-2 font-bold group-hover:gap-4 transition-all text-brand-text">
           Ver Proyecto
           <Icon name="lucide:arrow-right" size="sm" />
         </div>

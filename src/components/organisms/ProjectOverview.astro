@@ -39,7 +39,9 @@ const { project } = Astro.props;
         {project.caseStudy?.solution || "Solución no especificada."}
       </Typography>
       <div class="flex flex-wrap gap-3 pt-4">
-        {project.techStack.map((tech: string) => <Tag text={tech} />)}
+        {project.techStack.map((tech: string) => (
+          <Tag text={tech} />
+        ))}
       </div>
     </div>
   </div>
