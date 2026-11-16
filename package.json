@@ -15,7 +15,7 @@
   "version": "0.1.2",
   "type": "module",
   "engines": {
-    "node": ">=22.12.0"
+    "node": "24.x"
   },
   "packageManager": "pnpm@12.21.0",
   "scripts": {
